@@ -1,5 +1,7 @@
 #include "monitor.h"
 #include <sstream>
+#include <cstdlib>
+#include <cstring>
 
 int main(int argc, char **argv) 
 {
