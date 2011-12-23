@@ -1,0 +1,608 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F189B2F514A4231B0051D2F0 /* guWhiteboardMonitor.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = F189B2F414A4231B0051D2F0 /* guWhiteboardMonitor.1 */; };
+		F189B2FD14A423950051D2F0 /* monitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F189B2FB14A423950051D2F0 /* monitor.cpp */; };
+		F189B31114A423A30051D2F0 /* gusimplewhiteboard.c in Sources */ = {isa = PBXBuildFile; fileRef = F189B2FF14A423A30051D2F0 /* gusimplewhiteboard.c */; };
+		F189B31214A423A30051D2F0 /* Whiteboard.cc in Sources */ = {isa = PBXBuildFile; fileRef = F189B30314A423A30051D2F0 /* Whiteboard.cc */; };
+		F189B31314A423A30051D2F0 /* WhiteboardConstants.cc in Sources */ = {isa = PBXBuildFile; fileRef = F189B30514A423A30051D2F0 /* WhiteboardConstants.cc */; };
+		F189B38514A423C50051D2F0 /* gu_util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F189B32614A423BF0051D2F0 /* gu_util.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F189B31714A423A30051D2F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F189B30714A423A30051D2F0 /* gusimplewhiteboard.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F14C46AF14A064D8006B6953;
+			remoteInfo = gusimplewhiteboard;
+		};
+		F189B31914A423A30051D2F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F189B30714A423A30051D2F0 /* gusimplewhiteboard.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F1D925F014A13BAA00BDAEED;
+			remoteInfo = SimpleWhiteboardTest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F189B2EC14A4231B0051D2F0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				F189B2F514A4231B0051D2F0 /* guWhiteboardMonitor.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		F189B2EE14A4231B0051D2F0 /* guWhiteboardMonitor */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = guWhiteboardMonitor; sourceTree = BUILT_PRODUCTS_DIR; };
+		F189B2F414A4231B0051D2F0 /* guWhiteboardMonitor.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = guWhiteboardMonitor.1; sourceTree = "<group>"; };
+		F189B2FB14A423950051D2F0 /* monitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = monitor.cpp; sourceTree = "<group>"; };
+		F189B2FC14A423950051D2F0 /* monitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = monitor.h; sourceTree = "<group>"; };
+		F189B2FF14A423A30051D2F0 /* gusimplewhiteboard.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gusimplewhiteboard.c; sourceTree = "<group>"; };
+		F189B30014A423A30051D2F0 /* gusimplewhiteboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gusimplewhiteboard.h; sourceTree = "<group>"; };
+		F189B30114A423A30051D2F0 /* WBFunctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBFunctor.h; sourceTree = "<group>"; };
+		F189B30214A423A30051D2F0 /* WBMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBMsg.h; sourceTree = "<group>"; };
+		F189B30314A423A30051D2F0 /* Whiteboard.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Whiteboard.cc; sourceTree = "<group>"; };
+		F189B30414A423A30051D2F0 /* Whiteboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Whiteboard.h; sourceTree = "<group>"; };
+		F189B30514A423A30051D2F0 /* WhiteboardConstants.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WhiteboardConstants.cc; sourceTree = "<group>"; };
+		F189B30614A423A30051D2F0 /* WhiteboardConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhiteboardConstants.h; sourceTree = "<group>"; };
+		F189B30714A423A30051D2F0 /* gusimplewhiteboard.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = gusimplewhiteboard.xcodeproj; sourceTree = "<group>"; };
+		F189B30C14A423A30051D2F0 /* SimpleWhiteboardTest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SimpleWhiteboardTest-Info.plist"; sourceTree = "<group>"; };
+		F189B30D14A423A30051D2F0 /* SimpleWhiteboardTest-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SimpleWhiteboardTest-Prefix.pch"; sourceTree = "<group>"; };
+		F189B30E14A423A30051D2F0 /* SimpleWhiteboardTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleWhiteboardTest.h; sourceTree = "<group>"; };
+		F189B30F14A423A30051D2F0 /* SimpleWhiteboardTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SimpleWhiteboardTest.mm; sourceTree = "<group>"; };
+		F189B31014A423A30051D2F0 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		F189B31C14A423BF0051D2F0 /* AlgUtil.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AlgUtil.cpp; sourceTree = "<group>"; };
+		F189B31D14A423BF0051D2F0 /* AlgUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlgUtil.h; sourceTree = "<group>"; };
+		F189B31F14A423BF0051D2F0 /* BallInfo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BallInfo.cpp; sourceTree = "<group>"; };
+		F189B32014A423BF0051D2F0 /* BallInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BallInfo.h; sourceTree = "<group>"; };
+		F189B32114A423BF0051D2F0 /* defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = defines.h; sourceTree = "<group>"; };
+		F189B32214A423BF0051D2F0 /* DominoRecognition.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DominoRecognition.cpp; sourceTree = "<group>"; };
+		F189B32314A423BF0051D2F0 /* DominoRecognition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DominoRecognition.h; sourceTree = "<group>"; };
+		F189B32414A423BF0051D2F0 /* GoalInfo.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GoalInfo.cc; sourceTree = "<group>"; };
+		F189B32514A423BF0051D2F0 /* GoalInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoalInfo.h; sourceTree = "<group>"; };
+		F189B32614A423BF0051D2F0 /* gu_util.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = gu_util.cpp; sourceTree = "<group>"; };
+		F189B32714A423BF0051D2F0 /* gu_util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gu_util.h; sourceTree = "<group>"; };
+		F189B32814A423BF0051D2F0 /* GUData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUData.h; sourceTree = "<group>"; };
+		F189B32914A423BF0051D2F0 /* GUsem.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = GUsem.c; sourceTree = "<group>"; };
+		F189B32A14A423BF0051D2F0 /* GUsemaphore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUsemaphore.h; sourceTree = "<group>"; };
+		F189B32B14A423BF0051D2F0 /* GUStatedModule.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GUStatedModule.cpp; sourceTree = "<group>"; };
+		F189B32C14A423BF0051D2F0 /* GUStatedModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUStatedModule.h; sourceTree = "<group>"; };
+		F189B32D14A423BF0051D2F0 /* math_fnc.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = math_fnc.cpp; sourceTree = "<group>"; };
+		F189B32E14A423BF0051D2F0 /* math_fnc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = math_fnc.h; sourceTree = "<group>"; };
+		F189B32F14A423BF0051D2F0 /* MsgType.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MsgType.cpp; sourceTree = "<group>"; };
+		F189B33014A423BF0051D2F0 /* MsgType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MsgType.h; sourceTree = "<group>"; };
+		F189B33114A423BF0051D2F0 /* NaoPhysical.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NaoPhysical.h; sourceTree = "<group>"; };
+		F189B33314A423BF0051D2F0 /* RobotPhysical.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RobotPhysical.h; sourceTree = "<group>"; };
+		F189B33414A423BF0051D2F0 /* Trig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Trig.h; sourceTree = "<group>"; };
+		F189B33514A423BF0051D2F0 /* Useful.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Useful.h; sourceTree = "<group>"; };
+		F189B33614A423BF0051D2F0 /* warning.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = warning.h; sourceTree = "<group>"; };
+		F189B33E14A423BF0051D2F0 /* Avahi_Browser.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Avahi_Browser.cpp; sourceTree = "<group>"; };
+		F189B33F14A423BF0051D2F0 /* Bonjour_Browser.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Bonjour_Browser.cpp; sourceTree = "<group>"; };
+		F189B34014A423BF0051D2F0 /* client.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = client.h; sourceTree = "<group>"; };
+		F189B34114A423BF0051D2F0 /* lookup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lookup.h; sourceTree = "<group>"; };
+		F189B34214A423BF0051D2F0 /* publish.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = publish.h; sourceTree = "<group>"; };
+		F189B34314A423BF0051D2F0 /* address.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = address.h; sourceTree = "<group>"; };
+		F189B34414A423BF0051D2F0 /* alternative.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = alternative.h; sourceTree = "<group>"; };
+		F189B34514A423BF0051D2F0 /* cdecl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cdecl.h; sourceTree = "<group>"; };
+		F189B34614A423BF0051D2F0 /* defs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = defs.h; sourceTree = "<group>"; };
+		F189B34714A423BF0051D2F0 /* domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = domain.h; sourceTree = "<group>"; };
+		F189B34814A423BF0051D2F0 /* error.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = error.h; sourceTree = "<group>"; };
+		F189B34914A423BF0051D2F0 /* gccmacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gccmacro.h; sourceTree = "<group>"; };
+		F189B34A14A423BF0051D2F0 /* llist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = llist.h; sourceTree = "<group>"; };
+		F189B34B14A423BF0051D2F0 /* malloc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = malloc.h; sourceTree = "<group>"; };
+		F189B34C14A423BF0051D2F0 /* rlist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rlist.h; sourceTree = "<group>"; };
+		F189B34D14A423BF0051D2F0 /* simple-watch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "simple-watch.h"; sourceTree = "<group>"; };
+		F189B34E14A423BF0051D2F0 /* strlst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = strlst.h; sourceTree = "<group>"; };
+		F189B34F14A423BF0051D2F0 /* thread-watch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "thread-watch.h"; sourceTree = "<group>"; };
+		F189B35014A423BF0051D2F0 /* timeval.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = timeval.h; sourceTree = "<group>"; };
+		F189B35114A423BF0051D2F0 /* watch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = watch.h; sourceTree = "<group>"; };
+		F189B35214A423BF0051D2F0 /* dns_sd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dns_sd.h; sourceTree = "<group>"; };
+		F189B35314A423BF0051D2F0 /* core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = core.h; sourceTree = "<group>"; };
+		F189B35414A423BF0051D2F0 /* log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = log.h; sourceTree = "<group>"; };
+		F189B35514A423BF0051D2F0 /* lookup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lookup.h; sourceTree = "<group>"; };
+		F189B35614A423BF0051D2F0 /* publish.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = publish.h; sourceTree = "<group>"; };
+		F189B35714A423BF0051D2F0 /* rr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rr.h; sourceTree = "<group>"; };
+		F189B35814A423BF0051D2F0 /* glib-malloc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "glib-malloc.h"; sourceTree = "<group>"; };
+		F189B35914A423BF0051D2F0 /* glib-watch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "glib-watch.h"; sourceTree = "<group>"; };
+		F189B35A14A423BF0051D2F0 /* ga-client.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ga-client.h"; sourceTree = "<group>"; };
+		F189B35B14A423BF0051D2F0 /* ga-entry-group.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ga-entry-group.h"; sourceTree = "<group>"; };
+		F189B35C14A423BF0051D2F0 /* ga-enums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ga-enums.h"; sourceTree = "<group>"; };
+		F189B35D14A423BF0051D2F0 /* ga-error.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ga-error.h"; sourceTree = "<group>"; };
+		F189B35E14A423BF0051D2F0 /* ga-record-browser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ga-record-browser.h"; sourceTree = "<group>"; };
+		F189B35F14A423BF0051D2F0 /* ga-service-browser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ga-service-browser.h"; sourceTree = "<group>"; };
+		F189B36014A423BF0051D2F0 /* ga-service-resolver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ga-service-resolver.h"; sourceTree = "<group>"; };
+		F189B36214A423BF0051D2F0 /* Whiteboard.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Whiteboard.cpp; sourceTree = "<group>"; };
+		F189B36314A423BF0051D2F0 /* Whiteboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Whiteboard.h; sourceTree = "<group>"; };
+		F189B36414A423BF0051D2F0 /* callWhiteBoard.addMessage.req.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = callWhiteBoard.addMessage.req.xml; path = ../../Common/WhiteboardSoapClient/callWhiteBoard.addMessage.req.xml; sourceTree = "<group>"; };
+		F189B36514A423BF0051D2F0 /* callWhiteBoard.addMessage.res.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = callWhiteBoard.addMessage.res.xml; path = ../../Common/WhiteboardSoapClient/callWhiteBoard.addMessage.res.xml; sourceTree = "<group>"; };
+		F189B36614A423BF0051D2F0 /* callWhiteBoard.callback.req.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = callWhiteBoard.callback.req.xml; path = ../../Common/WhiteboardSoapClient/callWhiteBoard.callback.req.xml; sourceTree = "<group>"; };
+		F189B36714A423BF0051D2F0 /* callWhiteBoard.callback.res.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = callWhiteBoard.callback.res.xml; path = ../../Common/WhiteboardSoapClient/callWhiteBoard.callback.res.xml; sourceTree = "<group>"; };
+		F189B36814A423BF0051D2F0 /* callWhiteBoard.getMessage.req.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = callWhiteBoard.getMessage.req.xml; path = ../../Common/WhiteboardSoapClient/callWhiteBoard.getMessage.req.xml; sourceTree = "<group>"; };
+		F189B36914A423BF0051D2F0 /* callWhiteBoard.getMessage.res.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = callWhiteBoard.getMessage.res.xml; path = ../../Common/WhiteboardSoapClient/callWhiteBoard.getMessage.res.xml; sourceTree = "<group>"; };
+		F189B36A14A423BF0051D2F0 /* callWhiteBoard.nsmap */ = {isa = PBXFileReference; lastKnownFileType = file; name = callWhiteBoard.nsmap; path = ../../Common/WhiteboardSoapClient/callWhiteBoard.nsmap; sourceTree = "<group>"; };
+		F189B36B14A423BF0051D2F0 /* callWhiteBoard.removeMessage.req.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = callWhiteBoard.removeMessage.req.xml; path = ../../Common/WhiteboardSoapClient/callWhiteBoard.removeMessage.req.xml; sourceTree = "<group>"; };
+		F189B36C14A423BF0051D2F0 /* callWhiteBoard.removeMessage.res.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = callWhiteBoard.removeMessage.res.xml; path = ../../Common/WhiteboardSoapClient/callWhiteBoard.removeMessage.res.xml; sourceTree = "<group>"; };
+		F189B36D14A423BF0051D2F0 /* callWhiteBoard.subscribeToMessage.req.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = callWhiteBoard.subscribeToMessage.req.xml; path = ../../Common/WhiteboardSoapClient/callWhiteBoard.subscribeToMessage.req.xml; sourceTree = "<group>"; };
+		F189B36E14A423BF0051D2F0 /* callWhiteBoard.subscribeToMessage.res.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = callWhiteBoard.subscribeToMessage.res.xml; path = ../../Common/WhiteboardSoapClient/callWhiteBoard.subscribeToMessage.res.xml; sourceTree = "<group>"; };
+		F189B36F14A423BF0051D2F0 /* callWhiteBoard.unsubscribeToMessage.req.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = callWhiteBoard.unsubscribeToMessage.req.xml; path = ../../Common/WhiteboardSoapClient/callWhiteBoard.unsubscribeToMessage.req.xml; sourceTree = "<group>"; };
+		F189B37014A423BF0051D2F0 /* callWhiteBoard.unsubscribeToMessage.res.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = callWhiteBoard.unsubscribeToMessage.res.xml; path = ../../Common/WhiteboardSoapClient/callWhiteBoard.unsubscribeToMessage.res.xml; sourceTree = "<group>"; };
+		F189B37114A423BF0051D2F0 /* callWhiteBoard.wsdl */ = {isa = PBXFileReference; lastKnownFileType = file; name = callWhiteBoard.wsdl; path = ../../Common/WhiteboardSoapClient/callWhiteBoard.wsdl; sourceTree = "<group>"; };
+		F189B37214A423BF0051D2F0 /* env.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = env.h; path = ../../Common/WhiteboardSoapClient/env.h; sourceTree = "<group>"; };
+		F189B37314A423BF0051D2F0 /* envC.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = envC.cpp; path = ../../Common/WhiteboardSoapClient/envC.cpp; sourceTree = "<group>"; };
+		F189B37414A423BF0051D2F0 /* envClient.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = envClient.cpp; path = ../../Common/WhiteboardSoapClient/envClient.cpp; sourceTree = "<group>"; };
+		F189B37514A423BF0051D2F0 /* envClientLib.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = envClientLib.cpp; path = ../../Common/WhiteboardSoapClient/envClientLib.cpp; sourceTree = "<group>"; };
+		F189B37614A423BF0051D2F0 /* envH.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = envH.h; path = ../../Common/WhiteboardSoapClient/envH.h; sourceTree = "<group>"; };
+		F189B37714A423BF0051D2F0 /* envServer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = envServer.cpp; path = ../../Common/WhiteboardSoapClient/envServer.cpp; sourceTree = "<group>"; };
+		F189B37814A423BF0051D2F0 /* envServerLib.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = envServerLib.cpp; path = ../../Common/WhiteboardSoapClient/envServerLib.cpp; sourceTree = "<group>"; };
+		F189B37914A423BF0051D2F0 /* envStub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = envStub.h; path = ../../Common/WhiteboardSoapClient/envStub.h; sourceTree = "<group>"; };
+		F189B37A14A423BF0051D2F0 /* guwhiteboard.xsd */ = {isa = PBXFileReference; lastKnownFileType = file; name = guwhiteboard.xsd; path = ../../Common/WhiteboardSoapClient/guwhiteboard.xsd; sourceTree = "<group>"; };
+		F189B37B14A423BF0051D2F0 /* guWhiteboardC.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = guWhiteboardC.cpp; path = ../../Common/WhiteboardSoapClient/guWhiteboardC.cpp; sourceTree = "<group>"; };
+		F189B37C14A423BF0051D2F0 /* guWhiteboardcallWhiteBoardObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = guWhiteboardcallWhiteBoardObject.h; path = ../../Common/WhiteboardSoapClient/guWhiteboardcallWhiteBoardObject.h; sourceTree = "<group>"; };
+		F189B37D14A423BF0051D2F0 /* guWhiteboardcallWhiteBoardProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = guWhiteboardcallWhiteBoardProxy.h; path = ../../Common/WhiteboardSoapClient/guWhiteboardcallWhiteBoardProxy.h; sourceTree = "<group>"; };
+		F189B37E14A423BF0051D2F0 /* guWhiteboardClient.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = guWhiteboardClient.cpp; path = ../../Common/WhiteboardSoapClient/guWhiteboardClient.cpp; sourceTree = "<group>"; };
+		F189B37F14A423BF0051D2F0 /* guWhiteboardClientLib.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = guWhiteboardClientLib.cpp; path = ../../Common/WhiteboardSoapClient/guWhiteboardClientLib.cpp; sourceTree = "<group>"; };
+		F189B38014A423BF0051D2F0 /* guWhiteboardH.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = guWhiteboardH.h; path = ../../Common/WhiteboardSoapClient/guWhiteboardH.h; sourceTree = "<group>"; };
+		F189B38114A423BF0051D2F0 /* guWhiteboardServer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = guWhiteboardServer.cpp; path = ../../Common/WhiteboardSoapClient/guWhiteboardServer.cpp; sourceTree = "<group>"; };
+		F189B38214A423BF0051D2F0 /* guWhiteboardServerLib.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = guWhiteboardServerLib.cpp; path = ../../Common/WhiteboardSoapClient/guWhiteboardServerLib.cpp; sourceTree = "<group>"; };
+		F189B38314A423BF0051D2F0 /* guWhiteboardStub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = guWhiteboardStub.h; path = ../../Common/WhiteboardSoapClient/guWhiteboardStub.h; sourceTree = "<group>"; };
+		F189B38414A423BF0051D2F0 /* naoqi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = naoqi.h; path = ../../Common/WhiteboardSoapClient/naoqi.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F189B2EB14A4231B0051D2F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F189B2E314A4231B0051D2F0 = {
+			isa = PBXGroup;
+			children = (
+				F189B2FB14A423950051D2F0 /* monitor.cpp */,
+				F189B2FC14A423950051D2F0 /* monitor.h */,
+				F189B2FE14A423A30051D2F0 /* gusimplewhiteboard */,
+				F189B31B14A423BF0051D2F0 /* Common */,
+				F189B2F114A4231B0051D2F0 /* guWhiteboardMonitor */,
+				F189B2EF14A4231B0051D2F0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F189B2EF14A4231B0051D2F0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F189B2EE14A4231B0051D2F0 /* guWhiteboardMonitor */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F189B2F114A4231B0051D2F0 /* guWhiteboardMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				F189B2F414A4231B0051D2F0 /* guWhiteboardMonitor.1 */,
+			);
+			path = guWhiteboardMonitor;
+			sourceTree = "<group>";
+		};
+		F189B2FE14A423A30051D2F0 /* gusimplewhiteboard */ = {
+			isa = PBXGroup;
+			children = (
+				F189B2FF14A423A30051D2F0 /* gusimplewhiteboard.c */,
+				F189B30014A423A30051D2F0 /* gusimplewhiteboard.h */,
+				F189B30114A423A30051D2F0 /* WBFunctor.h */,
+				F189B30214A423A30051D2F0 /* WBMsg.h */,
+				F189B30314A423A30051D2F0 /* Whiteboard.cc */,
+				F189B30414A423A30051D2F0 /* Whiteboard.h */,
+				F189B30514A423A30051D2F0 /* WhiteboardConstants.cc */,
+				F189B30614A423A30051D2F0 /* WhiteboardConstants.h */,
+				F189B30714A423A30051D2F0 /* gusimplewhiteboard.xcodeproj */,
+				F189B30814A423A30051D2F0 /* SimpleWhiteboardTest */,
+			);
+			name = gusimplewhiteboard;
+			path = ../gusimplewhiteboard;
+			sourceTree = "<group>";
+		};
+		F189B30814A423A30051D2F0 /* SimpleWhiteboardTest */ = {
+			isa = PBXGroup;
+			children = (
+				F189B30B14A423A30051D2F0 /* en.lproj */,
+				F189B30C14A423A30051D2F0 /* SimpleWhiteboardTest-Info.plist */,
+				F189B30D14A423A30051D2F0 /* SimpleWhiteboardTest-Prefix.pch */,
+				F189B30E14A423A30051D2F0 /* SimpleWhiteboardTest.h */,
+				F189B30F14A423A30051D2F0 /* SimpleWhiteboardTest.mm */,
+			);
+			path = SimpleWhiteboardTest;
+			sourceTree = "<group>";
+		};
+		F189B30914A423A30051D2F0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F189B31814A423A30051D2F0 /* libgusimplewhiteboard.a */,
+				F189B31A14A423A30051D2F0 /* SimpleWhiteboardTest.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F189B30B14A423A30051D2F0 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				F189B31014A423A30051D2F0 /* InfoPlist.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
+		F189B31B14A423BF0051D2F0 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F189B31C14A423BF0051D2F0 /* AlgUtil.cpp */,
+				F189B31D14A423BF0051D2F0 /* AlgUtil.h */,
+				F189B31E14A423BF0051D2F0 /* Avahi */,
+				F189B31F14A423BF0051D2F0 /* BallInfo.cpp */,
+				F189B32014A423BF0051D2F0 /* BallInfo.h */,
+				F189B32114A423BF0051D2F0 /* defines.h */,
+				F189B32214A423BF0051D2F0 /* DominoRecognition.cpp */,
+				F189B32314A423BF0051D2F0 /* DominoRecognition.h */,
+				F189B32414A423BF0051D2F0 /* GoalInfo.cc */,
+				F189B32514A423BF0051D2F0 /* GoalInfo.h */,
+				F189B32614A423BF0051D2F0 /* gu_util.cpp */,
+				F189B32714A423BF0051D2F0 /* gu_util.h */,
+				F189B32814A423BF0051D2F0 /* GUData.h */,
+				F189B32914A423BF0051D2F0 /* GUsem.c */,
+				F189B32A14A423BF0051D2F0 /* GUsemaphore.h */,
+				F189B32B14A423BF0051D2F0 /* GUStatedModule.cpp */,
+				F189B32C14A423BF0051D2F0 /* GUStatedModule.h */,
+				F189B32D14A423BF0051D2F0 /* math_fnc.cpp */,
+				F189B32E14A423BF0051D2F0 /* math_fnc.h */,
+				F189B32F14A423BF0051D2F0 /* MsgType.cpp */,
+				F189B33014A423BF0051D2F0 /* MsgType.h */,
+				F189B33114A423BF0051D2F0 /* NaoPhysical.h */,
+				F189B33214A423BF0051D2F0 /* NewWhiteboards */,
+				F189B33314A423BF0051D2F0 /* RobotPhysical.h */,
+				F189B33414A423BF0051D2F0 /* Trig.h */,
+				F189B33514A423BF0051D2F0 /* Useful.h */,
+				F189B33614A423BF0051D2F0 /* warning.h */,
+				F189B33714A423BF0051D2F0 /* WhiteboardSoapClient */,
+			);
+			name = Common;
+			path = ../../Common;
+			sourceTree = "<group>";
+		};
+		F189B31E14A423BF0051D2F0 /* Avahi */ = {
+			isa = PBXGroup;
+			children = (
+				F189B33814A423BF0051D2F0 /* avahi-client */,
+				F189B33914A423BF0051D2F0 /* avahi-common */,
+				F189B33A14A423BF0051D2F0 /* avahi-compat-libdns_sd */,
+				F189B33B14A423BF0051D2F0 /* avahi-core */,
+				F189B33C14A423BF0051D2F0 /* avahi-glib */,
+				F189B33D14A423BF0051D2F0 /* avahi-gobject */,
+				F189B33E14A423BF0051D2F0 /* Avahi_Browser.cpp */,
+				F189B33F14A423BF0051D2F0 /* Bonjour_Browser.cpp */,
+			);
+			path = Avahi;
+			sourceTree = "<group>";
+		};
+		F189B33214A423BF0051D2F0 /* NewWhiteboards */ = {
+			isa = PBXGroup;
+			children = (
+				F189B36114A423BF0051D2F0 /* LocalOnly */,
+			);
+			path = NewWhiteboards;
+			sourceTree = "<group>";
+		};
+		F189B33714A423BF0051D2F0 /* WhiteboardSoapClient */ = {
+			isa = PBXGroup;
+			children = (
+				F189B36414A423BF0051D2F0 /* callWhiteBoard.addMessage.req.xml */,
+				F189B36514A423BF0051D2F0 /* callWhiteBoard.addMessage.res.xml */,
+				F189B36614A423BF0051D2F0 /* callWhiteBoard.callback.req.xml */,
+				F189B36714A423BF0051D2F0 /* callWhiteBoard.callback.res.xml */,
+				F189B36814A423BF0051D2F0 /* callWhiteBoard.getMessage.req.xml */,
+				F189B36914A423BF0051D2F0 /* callWhiteBoard.getMessage.res.xml */,
+				F189B36A14A423BF0051D2F0 /* callWhiteBoard.nsmap */,
+				F189B36B14A423BF0051D2F0 /* callWhiteBoard.removeMessage.req.xml */,
+				F189B36C14A423BF0051D2F0 /* callWhiteBoard.removeMessage.res.xml */,
+				F189B36D14A423BF0051D2F0 /* callWhiteBoard.subscribeToMessage.req.xml */,
+				F189B36E14A423BF0051D2F0 /* callWhiteBoard.subscribeToMessage.res.xml */,
+				F189B36F14A423BF0051D2F0 /* callWhiteBoard.unsubscribeToMessage.req.xml */,
+				F189B37014A423BF0051D2F0 /* callWhiteBoard.unsubscribeToMessage.res.xml */,
+				F189B37114A423BF0051D2F0 /* callWhiteBoard.wsdl */,
+				F189B37214A423BF0051D2F0 /* env.h */,
+				F189B37314A423BF0051D2F0 /* envC.cpp */,
+				F189B37414A423BF0051D2F0 /* envClient.cpp */,
+				F189B37514A423BF0051D2F0 /* envClientLib.cpp */,
+				F189B37614A423BF0051D2F0 /* envH.h */,
+				F189B37714A423BF0051D2F0 /* envServer.cpp */,
+				F189B37814A423BF0051D2F0 /* envServerLib.cpp */,
+				F189B37914A423BF0051D2F0 /* envStub.h */,
+				F189B37A14A423BF0051D2F0 /* guwhiteboard.xsd */,
+				F189B37B14A423BF0051D2F0 /* guWhiteboardC.cpp */,
+				F189B37C14A423BF0051D2F0 /* guWhiteboardcallWhiteBoardObject.h */,
+				F189B37D14A423BF0051D2F0 /* guWhiteboardcallWhiteBoardProxy.h */,
+				F189B37E14A423BF0051D2F0 /* guWhiteboardClient.cpp */,
+				F189B37F14A423BF0051D2F0 /* guWhiteboardClientLib.cpp */,
+				F189B38014A423BF0051D2F0 /* guWhiteboardH.h */,
+				F189B38114A423BF0051D2F0 /* guWhiteboardServer.cpp */,
+				F189B38214A423BF0051D2F0 /* guWhiteboardServerLib.cpp */,
+				F189B38314A423BF0051D2F0 /* guWhiteboardStub.h */,
+				F189B38414A423BF0051D2F0 /* naoqi.h */,
+			);
+			path = WhiteboardSoapClient;
+			sourceTree = "<group>";
+		};
+		F189B33814A423BF0051D2F0 /* avahi-client */ = {
+			isa = PBXGroup;
+			children = (
+				F189B34014A423BF0051D2F0 /* client.h */,
+				F189B34114A423BF0051D2F0 /* lookup.h */,
+				F189B34214A423BF0051D2F0 /* publish.h */,
+			);
+			path = "avahi-client";
+			sourceTree = "<group>";
+		};
+		F189B33914A423BF0051D2F0 /* avahi-common */ = {
+			isa = PBXGroup;
+			children = (
+				F189B34314A423BF0051D2F0 /* address.h */,
+				F189B34414A423BF0051D2F0 /* alternative.h */,
+				F189B34514A423BF0051D2F0 /* cdecl.h */,
+				F189B34614A423BF0051D2F0 /* defs.h */,
+				F189B34714A423BF0051D2F0 /* domain.h */,
+				F189B34814A423BF0051D2F0 /* error.h */,
+				F189B34914A423BF0051D2F0 /* gccmacro.h */,
+				F189B34A14A423BF0051D2F0 /* llist.h */,
+				F189B34B14A423BF0051D2F0 /* malloc.h */,
+				F189B34C14A423BF0051D2F0 /* rlist.h */,
+				F189B34D14A423BF0051D2F0 /* simple-watch.h */,
+				F189B34E14A423BF0051D2F0 /* strlst.h */,
+				F189B34F14A423BF0051D2F0 /* thread-watch.h */,
+				F189B35014A423BF0051D2F0 /* timeval.h */,
+				F189B35114A423BF0051D2F0 /* watch.h */,
+			);
+			path = "avahi-common";
+			sourceTree = "<group>";
+		};
+		F189B33A14A423BF0051D2F0 /* avahi-compat-libdns_sd */ = {
+			isa = PBXGroup;
+			children = (
+				F189B35214A423BF0051D2F0 /* dns_sd.h */,
+			);
+			path = "avahi-compat-libdns_sd";
+			sourceTree = "<group>";
+		};
+		F189B33B14A423BF0051D2F0 /* avahi-core */ = {
+			isa = PBXGroup;
+			children = (
+				F189B35314A423BF0051D2F0 /* core.h */,
+				F189B35414A423BF0051D2F0 /* log.h */,
+				F189B35514A423BF0051D2F0 /* lookup.h */,
+				F189B35614A423BF0051D2F0 /* publish.h */,
+				F189B35714A423BF0051D2F0 /* rr.h */,
+			);
+			path = "avahi-core";
+			sourceTree = "<group>";
+		};
+		F189B33C14A423BF0051D2F0 /* avahi-glib */ = {
+			isa = PBXGroup;
+			children = (
+				F189B35814A423BF0051D2F0 /* glib-malloc.h */,
+				F189B35914A423BF0051D2F0 /* glib-watch.h */,
+			);
+			path = "avahi-glib";
+			sourceTree = "<group>";
+		};
+		F189B33D14A423BF0051D2F0 /* avahi-gobject */ = {
+			isa = PBXGroup;
+			children = (
+				F189B35A14A423BF0051D2F0 /* ga-client.h */,
+				F189B35B14A423BF0051D2F0 /* ga-entry-group.h */,
+				F189B35C14A423BF0051D2F0 /* ga-enums.h */,
+				F189B35D14A423BF0051D2F0 /* ga-error.h */,
+				F189B35E14A423BF0051D2F0 /* ga-record-browser.h */,
+				F189B35F14A423BF0051D2F0 /* ga-service-browser.h */,
+				F189B36014A423BF0051D2F0 /* ga-service-resolver.h */,
+			);
+			path = "avahi-gobject";
+			sourceTree = "<group>";
+		};
+		F189B36114A423BF0051D2F0 /* LocalOnly */ = {
+			isa = PBXGroup;
+			children = (
+				F189B36214A423BF0051D2F0 /* Whiteboard.cpp */,
+				F189B36314A423BF0051D2F0 /* Whiteboard.h */,
+			);
+			path = LocalOnly;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F189B2ED14A4231B0051D2F0 /* guWhiteboardMonitor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F189B2F814A4231B0051D2F0 /* Build configuration list for PBXNativeTarget "guWhiteboardMonitor" */;
+			buildPhases = (
+				F189B2EA14A4231B0051D2F0 /* Sources */,
+				F189B2EB14A4231B0051D2F0 /* Frameworks */,
+				F189B2EC14A4231B0051D2F0 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = guWhiteboardMonitor;
+			productName = guWhiteboardMonitor;
+			productReference = F189B2EE14A4231B0051D2F0 /* guWhiteboardMonitor */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F189B2E514A4231B0051D2F0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = ICT;
+			};
+			buildConfigurationList = F189B2E814A4231B0051D2F0 /* Build configuration list for PBXProject "guWhiteboardMonitor" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F189B2E314A4231B0051D2F0;
+			productRefGroup = F189B2EF14A4231B0051D2F0 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = F189B30914A423A30051D2F0 /* Products */;
+					ProjectRef = F189B30714A423A30051D2F0 /* gusimplewhiteboard.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				F189B2ED14A4231B0051D2F0 /* guWhiteboardMonitor */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		F189B31814A423A30051D2F0 /* libgusimplewhiteboard.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libgusimplewhiteboard.a;
+			remoteRef = F189B31714A423A30051D2F0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F189B31A14A423A30051D2F0 /* SimpleWhiteboardTest.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SimpleWhiteboardTest.octest;
+			remoteRef = F189B31914A423A30051D2F0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F189B2EA14A4231B0051D2F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F189B2FD14A423950051D2F0 /* monitor.cpp in Sources */,
+				F189B31114A423A30051D2F0 /* gusimplewhiteboard.c in Sources */,
+				F189B31214A423A30051D2F0 /* Whiteboard.cc in Sources */,
+				F189B31314A423A30051D2F0 /* WhiteboardConstants.cc in Sources */,
+				F189B38514A423C50051D2F0 /* gu_util.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F189B2F614A4231B0051D2F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../gusimplewhiteboard",
+					"$(SRCROOT)/../../Common",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F189B2F714A4231B0051D2F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../gusimplewhiteboard",
+					"$(SRCROOT)/../../Common",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		F189B2F914A4231B0051D2F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F189B2FA14A4231B0051D2F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F189B2E814A4231B0051D2F0 /* Build configuration list for PBXProject "guWhiteboardMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F189B2F614A4231B0051D2F0 /* Debug */,
+				F189B2F714A4231B0051D2F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F189B2F814A4231B0051D2F0 /* Build configuration list for PBXNativeTarget "guWhiteboardMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F189B2F914A4231B0051D2F0 /* Debug */,
+				F189B2FA14A4231B0051D2F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F189B2E514A4231B0051D2F0 /* Project object */;
+}
