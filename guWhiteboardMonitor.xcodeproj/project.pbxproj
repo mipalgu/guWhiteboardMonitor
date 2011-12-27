@@ -601,6 +601,7 @@
 				F189B2FA14A4231B0051D2F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
