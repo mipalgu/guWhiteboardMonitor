@@ -81,36 +81,44 @@ void GUMonitor::monitorCallback(std::string dataName, WBMsg *value)
 	std::ostringstream out;
 	switch ((int)value->getType()) 
 	{
-		case 0:
+		case WBMsg::TypeBool:
 		{
 			out << (int)value->getBoolValue();
 			break;
 		}
-		case 1:
+		case WBMsg::TypeInt:
 		{
 			out << value->getIntValue();
 			break;
 		}
-		case 2:
+		case WBMsg::TypeFloat:
 		{
 			out << value->getFloatValue();
 			break;
 		}
-		case 3:
+		case WBMsg::TypeString:
 		{
 			out << value->getStringValue();
 			break;
 		}
-		case 4:
-			break;
-		case 5:
-			break;
+		case WBMsg::TypeArray:
+                {
+                        const vector<int> &vec = value->getArrayValue();
+                        int n = vec.size();
+                        out << "( ";
+                        for (int i = 0; i < n; i++)
+                        {
+                                out << vec[i];
+                                if (i < n-1) out << ", ";
+                        }
+                        out << " )";
+                }
 		default:
 		{
 			break;
 		}
 	}
-	fprintf(stderr, "Type: \t%s\t\tValue:\t%s\n", (char *)dataName.c_str(), (char *)out.str().c_str());
+	printf("Type: \t%s\t\tValue:\t%s\n", (char *)dataName.c_str(), (char *)out.str().c_str());
 	
 	pthread_mutex_unlock (&sMutex);
 }
