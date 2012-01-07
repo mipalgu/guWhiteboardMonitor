@@ -12,7 +12,7 @@ using namespace guWhiteboard;
 class GUMonitor
 {
 public:
-	GUMonitor(char *whiteboardLocation = (char *)"");
+	GUMonitor(char *whiteboardLocation = (char *)"", char **subscription_list = NULL, int n = 0);
 	
 	~GUMonitor();
 	

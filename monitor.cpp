@@ -30,9 +30,15 @@ int main(int argc, char **argv)
 		}
 	}	
 	//-----------------------------------
-	
+
+        argv += optind;
+        argc -= optind;
+
+        char **subs = NULL;
+        if (argc) subs = argv;
+
 	//Start game
-	GUMonitor *monitor = new GUMonitor(specAddressOfWB);
+	GUMonitor *monitor = new GUMonitor(specAddressOfWB, subs, argc);
 	
 	//Currently waiting for events, loop to keep process from closing
 	while(true)
@@ -42,7 +48,7 @@ int main(int argc, char **argv)
 	return 0;
 }
 
-GUMonitor::GUMonitor(char *whiteboardLocation)
+GUMonitor::GUMonitor(char *whiteboardLocation, char **subscription_list, int n)
 {
 	//Setup
 	//----------------------------------
@@ -59,7 +65,10 @@ GUMonitor::GUMonitor(char *whiteboardLocation)
 	
 	//Subscriptions
 	//----------------------------------
-	wb->subscribeToMessage("*", WB_BIND(GUMonitor::monitorCallback), r);
+        if (subscription_list) while (n--)
+                wb->subscribeToMessage(*subscription_list++, WB_BIND(GUMonitor::monitorCallback), r);
+        else
+                wb->subscribeToMessage("*", WB_BIND(GUMonitor::monitorCallback), r);
 	if(r != Whiteboard::METHOD_OK)
 	{
 		fprintf(stderr, "Failed to subscribe\n");
