@@ -1,5 +1,5 @@
 #
-#	$Id: Makefile 482 2010-04-26 00:54:25Z rh $
+#	$Id$
 #
 # GU monitor whiteboard module Makefile
 #
