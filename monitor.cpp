@@ -1,3 +1,5 @@
+#include <cstdio>
+
 #include "monitor.h"
 #include <sstream>
 #include <cstdlib>
