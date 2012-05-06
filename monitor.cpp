@@ -55,13 +55,18 @@ GUMonitor::GUMonitor(char *whiteboardLocation, char **subscription_list, int n)
 	//Setup
 	//----------------------------------
 	if(strlen(whiteboardLocation) == 0)
-	{
-		wb = new Whiteboard();		
+	{   
+        std::string str = nameForMachine(Machine1);
+		wb = new RemoteWhiteboard(str.c_str());		
 	}
 	else
 	{
-		wb = new Whiteboard(whiteboardLocation);
+        std::string str = nameForMachine((RWBMachine) atoi(whiteboardLocation));
+		wb = new RemoteWhiteboard(str.c_str());		        
 	}
+    
+    wb->addReplicationType(std::string("TestType"));
+    
 	pthread_mutex_init(&sMutex, NULL);
 	//----------------------------------
 	
