@@ -3,7 +3,7 @@
  */
 
 
-#include "Whiteboard.h"
+#include "RemoteWhiteboard.h"
 
 
 using namespace std;
@@ -19,7 +19,7 @@ public:
 private:
 	void monitorCallback(std::string dataName, WBMsg *value);
 	
-	Whiteboard *wb;	/**< Whiteboard object. */ 
+	RemoteWhiteboard *wb;	/**< Whiteboard object. */ 
 	Whiteboard::WBResult r; /**< Return message from wb methods. */ 
 	pthread_mutex_t  sMutex; /**< Keep things thread safe, don't want two callbacks running at the same time. */ 	
 };
