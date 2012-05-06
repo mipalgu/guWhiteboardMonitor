@@ -57,12 +57,13 @@ GUMonitor::GUMonitor(char *whiteboardLocation, char **subscription_list, int n)
 	if(strlen(whiteboardLocation) == 0)
 	{   
         std::string str = nameForMachine(Machine1);
-		wb = new RemoteWhiteboard(str.c_str());		
+		wb = new RemoteWhiteboard(str.c_str(), Machine1);		
 	}
 	else
 	{
-        std::string str = nameForMachine((RWBMachine) atoi(whiteboardLocation));
-		wb = new RemoteWhiteboard(str.c_str());		        
+                RWBMachine machine = (RWBMachine) atoi(whiteboardLocation);
+        std::string str = nameForMachine(machine);
+		wb = new RemoteWhiteboard(str.c_str(), machine);		        
 	}
     
     wb->addReplicationType(std::string("TestType"));
