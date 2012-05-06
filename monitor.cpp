@@ -32,13 +32,13 @@ int main(int argc, char **argv)
 		}
 	}	
 	//-----------------------------------
-
+        
         argv += optind;
         argc -= optind;
-
+        
         char **subs = NULL;
         if (argc) subs = argv;
-
+        
 	//Start game
 	GUMonitor *monitor = new GUMonitor(specAddressOfWB, subs, argc);
 	
@@ -55,19 +55,13 @@ GUMonitor::GUMonitor(char *whiteboardLocation, char **subscription_list, int n)
 	//Setup
 	//----------------------------------
 	if(strlen(whiteboardLocation) == 0)
-	{   
-        std::string str = nameForMachine(Machine1);
-		wb = new RemoteWhiteboard(str.c_str(), Machine1);		
+	{
+		wb = new Whiteboard();		
 	}
 	else
 	{
-                RWBMachine machine = (RWBMachine) atoi(whiteboardLocation);
-        std::string str = nameForMachine(machine);
-		wb = new RemoteWhiteboard(str.c_str(), machine);		        
+		wb = new Whiteboard(whiteboardLocation);
 	}
-    
-    wb->addReplicationType(std::string("TestType"));
-    
 	pthread_mutex_init(&sMutex, NULL);
 	//----------------------------------
 	
