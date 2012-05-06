@@ -16,6 +16,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F16BB59615563ACB00148325 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F189B30714A423A30051D2F0 /* gusimplewhiteboard.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F1C94D641555CA8E00B717DF;
+			remoteInfo = guobjcwhiteboard;
+		};
+		F16BB59815563ACB00148325 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F189B30714A423A30051D2F0 /* gusimplewhiteboard.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F1C94D711555CA8E00B717DF;
+			remoteInfo = guobjcwhiteboardTests;
+		};
+		F16BB59A15563ACB00148325 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F189B30714A423A30051D2F0 /* gusimplewhiteboard.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F1C94DA31555D3C300B717DF;
+			remoteInfo = gusimplewhiteboardios;
+		};
 		F189B31714A423A30051D2F0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F189B30714A423A30051D2F0 /* gusimplewhiteboard.xcodeproj */;
@@ -235,6 +256,9 @@
 			children = (
 				F189B31814A423A30051D2F0 /* libgusimplewhiteboard.a */,
 				F189B31A14A423A30051D2F0 /* SimpleWhiteboardTest.octest */,
+				F16BB59715563ACB00148325 /* libguobjcwhiteboard.a */,
+				F16BB59915563ACB00148325 /* guobjcwhiteboardTests.octest */,
+				F16BB59B15563ACB00148325 /* libgusimplewhiteboardios.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -483,6 +507,27 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		F16BB59715563ACB00148325 /* libguobjcwhiteboard.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libguobjcwhiteboard.a;
+			remoteRef = F16BB59615563ACB00148325 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F16BB59915563ACB00148325 /* guobjcwhiteboardTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = guobjcwhiteboardTests.octest;
+			remoteRef = F16BB59815563ACB00148325 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F16BB59B15563ACB00148325 /* libgusimplewhiteboardios.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libgusimplewhiteboardios.a;
+			remoteRef = F16BB59A15563ACB00148325 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		F189B31814A423A30051D2F0 /* libgusimplewhiteboard.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
