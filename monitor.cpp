@@ -32,13 +32,13 @@ int main(int argc, char **argv)
 		}
 	}	
 	//-----------------------------------
-
-        argv += optind;
-        argc -= optind;
-
-        char **subs = NULL;
-        if (argc) subs = argv;
-
+    
+    argv += optind;
+    argc -= optind;
+    
+    char **subs = NULL;
+    if (argc) subs = argv;
+    
 	//Start game
 	GUMonitor *monitor = new GUMonitor(specAddressOfWB, subs, argc);
 	
@@ -55,28 +55,22 @@ GUMonitor::GUMonitor(char *whiteboardLocation, char **subscription_list, int n)
 	//Setup
 	//----------------------------------
 	if(strlen(whiteboardLocation) == 0)
-	{   
-        std::string str = nameForMachine(Machine1);
-		wb = new RemoteWhiteboard(str.c_str(), Machine1);		
+	{
+		wb = new Whiteboard();		
 	}
 	else
 	{
-                RWBMachine machine = (RWBMachine) atoi(whiteboardLocation);
-        std::string str = nameForMachine(machine);
-		wb = new RemoteWhiteboard(str.c_str(), machine);		        
+		wb = new Whiteboard(whiteboardLocation);
 	}
-    
-    wb->addReplicationType(std::string("TestType"));
-    
 	pthread_mutex_init(&sMutex, NULL);
 	//----------------------------------
 	
 	//Subscriptions
 	//----------------------------------
-        if (subscription_list) while (n--)
-                wb->subscribeToMessage(*subscription_list++, WB_BIND(GUMonitor::monitorCallback), r);
-        else
-                wb->subscribeToMessage("*", WB_BIND(GUMonitor::monitorCallback), r);
+    if (subscription_list) while (n--)
+        wb->subscribeToMessage(*subscription_list++, WB_BIND(GUMonitor::monitorCallback), r);
+    else
+        wb->subscribeToMessage("*", WB_BIND(GUMonitor::monitorCallback), r);
 	if(r != Whiteboard::METHOD_OK)
 	{
 		fprintf(stderr, "Failed to subscribe\n");
@@ -119,17 +113,17 @@ void GUMonitor::monitorCallback(std::string dataName, WBMsg *value)
 			break;
 		}
 		case WBMsg::TypeArray:
-                {
-                        const vector<int> &vec = value->getArrayValue();
-                        int n = vec.size();
-                        out << "( ";
-                        for (int i = 0; i < n; i++)
-                        {
-                                out << vec[i];
-                                if (i < n-1) out << ", ";
-                        }
-                        out << " )";
-                }
+        {
+            const vector<int> &vec = value->getArrayValue();
+            int n = vec.size();
+            out << "( ";
+            for (int i = 0; i < n; i++)
+            {
+                out << vec[i];
+                if (i < n-1) out << ", ";
+            }
+            out << " )";
+        }
 		default:
 		{
 			break;
