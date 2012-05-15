@@ -9,7 +9,6 @@ ALL_TARGETS=host robot
 
 CPP_SRCS=monitor.cpp
 HDRS=monitor.h 
-USE_REMOTE_WHITEBOARD=yes
 
 
 .include "../../mk/whiteboard.mk"	# required for whiteboard clients
