@@ -73,7 +73,7 @@
 		F189B2FC14A423950051D2F0 /* monitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = monitor.h; sourceTree = "<group>"; };
 		F189B2FF14A423A30051D2F0 /* gusimplewhiteboard.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gusimplewhiteboard.c; sourceTree = "<group>"; };
 		F189B30014A423A30051D2F0 /* gusimplewhiteboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gusimplewhiteboard.h; sourceTree = "<group>"; };
-		F189B30114A423A30051D2F0 /* WBFunctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBFunctor.h; sourceTree = "<group>"; };
+		F189B30114A423A30051D2F0 /* WBFunctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = WBFunctor.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		F189B30214A423A30051D2F0 /* WBMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBMsg.h; sourceTree = "<group>"; };
 		F189B30314A423A30051D2F0 /* Whiteboard.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Whiteboard.cc; sourceTree = "<group>"; };
 		F189B30414A423A30051D2F0 /* Whiteboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Whiteboard.h; sourceTree = "<group>"; };
@@ -119,7 +119,7 @@
 		F189B34414A423BF0051D2F0 /* alternative.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = alternative.h; sourceTree = "<group>"; };
 		F189B34514A423BF0051D2F0 /* cdecl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cdecl.h; sourceTree = "<group>"; };
 		F189B34614A423BF0051D2F0 /* defs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = defs.h; sourceTree = "<group>"; };
-		F189B34714A423BF0051D2F0 /* domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = domain.h; sourceTree = "<group>"; };
+		F189B34714A423BF0051D2F0 /* domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = domain.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		F189B34814A423BF0051D2F0 /* error.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = error.h; sourceTree = "<group>"; };
 		F189B34914A423BF0051D2F0 /* gccmacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gccmacro.h; sourceTree = "<group>"; };
 		F189B34A14A423BF0051D2F0 /* llist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = llist.h; sourceTree = "<group>"; };
@@ -138,13 +138,13 @@
 		F189B35714A423BF0051D2F0 /* rr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rr.h; sourceTree = "<group>"; };
 		F189B35814A423BF0051D2F0 /* glib-malloc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "glib-malloc.h"; sourceTree = "<group>"; };
 		F189B35914A423BF0051D2F0 /* glib-watch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "glib-watch.h"; sourceTree = "<group>"; };
-		F189B35A14A423BF0051D2F0 /* ga-client.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ga-client.h"; sourceTree = "<group>"; };
-		F189B35B14A423BF0051D2F0 /* ga-entry-group.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ga-entry-group.h"; sourceTree = "<group>"; };
+		F189B35A14A423BF0051D2F0 /* ga-client.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "ga-client.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		F189B35B14A423BF0051D2F0 /* ga-entry-group.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "ga-entry-group.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		F189B35C14A423BF0051D2F0 /* ga-enums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ga-enums.h"; sourceTree = "<group>"; };
 		F189B35D14A423BF0051D2F0 /* ga-error.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ga-error.h"; sourceTree = "<group>"; };
-		F189B35E14A423BF0051D2F0 /* ga-record-browser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ga-record-browser.h"; sourceTree = "<group>"; };
-		F189B35F14A423BF0051D2F0 /* ga-service-browser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ga-service-browser.h"; sourceTree = "<group>"; };
-		F189B36014A423BF0051D2F0 /* ga-service-resolver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ga-service-resolver.h"; sourceTree = "<group>"; };
+		F189B35E14A423BF0051D2F0 /* ga-record-browser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "ga-record-browser.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		F189B35F14A423BF0051D2F0 /* ga-service-browser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "ga-service-browser.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		F189B36014A423BF0051D2F0 /* ga-service-resolver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "ga-service-resolver.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		F189B36214A423BF0051D2F0 /* Whiteboard.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Whiteboard.cpp; sourceTree = "<group>"; };
 		F189B36314A423BF0051D2F0 /* Whiteboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Whiteboard.h; sourceTree = "<group>"; };
 		F189B36414A423BF0051D2F0 /* callWhiteBoard.addMessage.req.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = callWhiteBoard.addMessage.req.xml; path = ../../Common/WhiteboardSoapClient/callWhiteBoard.addMessage.req.xml; sourceTree = "<group>"; };
