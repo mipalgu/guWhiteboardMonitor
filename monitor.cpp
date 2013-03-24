@@ -5,6 +5,10 @@
 #include <cstdlib>
 #include <cstring>
 
+using namespace std;
+using namespace guWhiteboard;
+
+
 int main(int argc, char **argv) 
 {
 	fprintf(stderr, "\n **** GU WHITEBOARD MONITOR MODULE ****\n (c) 2011 Carl Lusty\n\n");
@@ -26,7 +30,6 @@ int main(int argc, char **argv)
 				fprintf(stderr, "\n\nUsage: guWhiteboardMonitor [OPTION] . . . \n");
 				fprintf(stderr, "-w, The name of the Whiteboard to connect to.\n");
 				return EXIT_FAILURE;
-				break;
 			default:
 				break;
 		}
@@ -43,11 +46,11 @@ int main(int argc, char **argv)
 	GUMonitor *monitor = new GUMonitor(specAddressOfWB, subs, argc);
 	
 	//Currently waiting for events, loop to keep process from closing
-	while(true)
+	while(monitor)
 	{
 		sleep(5);
 	}
-	return 0;
+	return EXIT_FAILURE;
 }
 
 GUMonitor::GUMonitor(char *whiteboardLocation, char **subscription_list, int n)
@@ -115,19 +118,18 @@ void GUMonitor::monitorCallback(std::string dataName, WBMsg *value)
 		case WBMsg::TypeArray:
         {
             const vector<int> &vec = value->getArrayValue();
-            int n = vec.size();
+            size_t n = vec.size();
             out << "( ";
-            for (int i = 0; i < n; i++)
+            for (size_t i = 0; i < n; i++)
             {
                 out << vec[i];
                 if (i < n-1) out << ", ";
             }
             out << " )";
         }
+                        break;
 		default:
-		{
-			break;
-		}
+                        break;
 	}
 	printf("Type: \t%s\t\tValue:\t%s\n", (char *)dataName.c_str(), (char *)out.str().c_str());
 	
