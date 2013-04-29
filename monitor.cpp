@@ -1,6 +1,7 @@
 #include <cstdio>
 
 #include "monitor.h"
+#include "guwhiteboardgetter.h"
 #include <sstream>
 #include <cstdlib>
 #include <cstring>
@@ -55,6 +56,7 @@ int main(int argc, char **argv)
 
 GUMonitor::GUMonitor(char *whiteboardLocation, char **subscription_list, int n)
 {
+#ifdef USE_OLD_WHITEBOARD
 	//Setup
 	//----------------------------------
 	if(strlen(whiteboardLocation) == 0)
@@ -65,11 +67,15 @@ GUMonitor::GUMonitor(char *whiteboardLocation, char **subscription_list, int n)
 	{
 		wb = new Whiteboard(whiteboardLocation);
 	}
+#else
+        watcher = new whiteboard_watcher();
+#endif
 	pthread_mutex_init(&sMutex, NULL);
 	//----------------------------------
 	
 	//Subscriptions
 	//----------------------------------
+#ifdef USE_OLD_WHITEBOARD
     if (subscription_list) while (n--)
         wb->subscribeToMessage(*subscription_list++, WB_BIND(GUMonitor::monitorCallback), r);
     else
@@ -78,12 +84,19 @@ GUMonitor::GUMonitor(char *whiteboardLocation, char **subscription_list, int n)
 	{
 		fprintf(stderr, "Failed to subscribe\n");
 	}
-	
+#else
+        watcher->subscribe(createWBFunctor(this, callback, kwb_reserved_SubscribeToAllTypes_v));
 }
 
 GUMonitor::~GUMonitor()
 {
 	
+}
+
+
+void callback(guWhiteboard::WBTypes t, gu_simple_message *msg)
+{
+        
 }
 
 
