@@ -69,6 +69,10 @@ GUMonitor::GUMonitor(char *whiteboardLocation, char **subscription_list, int n)
 	}
 #else
         watcher = new whiteboard_watcher();
+
+        (void) whiteboardLocation;
+        (void) subscription_list;
+        (void) n;
 #endif
 	pthread_mutex_init(&sMutex, NULL);
 	//----------------------------------
@@ -85,7 +89,8 @@ GUMonitor::GUMonitor(char *whiteboardLocation, char **subscription_list, int n)
 		fprintf(stderr, "Failed to subscribe\n");
 	}
 #else
-        watcher->subscribe(createWBFunctor(this, callback, kwb_reserved_SubscribeToAllTypes_v));
+        watcher->subscribe(createWBFunctor<GUMonitor>(this, &GUMonitor::callback, kwb_reserved_SubscribeToAllTypes_v));
+#endif
 }
 
 GUMonitor::~GUMonitor()
@@ -94,9 +99,22 @@ GUMonitor::~GUMonitor()
 }
 
 
-void callback(guWhiteboard::WBTypes t, gu_simple_message *msg)
+void GUMonitor::callback(guWhiteboard::WBTypes t, gu_simple_message *msg)
 {
-        
+        const char *dataName = WBTypes_stringValues[t];
+
+        try             // try with a new message type
+        {
+                pthread_mutex_lock (&sMutex);
+                string value = getmsg(t, msg);
+                printf("Type: \t%s\t\tValue:\t%s\n", dataName, value.c_str());
+                pthread_mutex_unlock (&sMutex);
+        }
+        catch (...)     // no string conversion, fall back to old WB
+        {
+                WBMsg wbmsg = Whiteboard::getWBMsg(msg);
+                monitorCallback(dataName, &wbmsg);
+        }
 }
 
 
@@ -144,7 +162,7 @@ void GUMonitor::monitorCallback(std::string dataName, WBMsg *value)
 		default:
                         break;
 	}
-	printf("Type: \t%s\t\tValue:\t%s\n", (char *)dataName.c_str(), (char *)out.str().c_str());
+	printf("OType:\t%s\t\tValue:\t%s\n", (char *)dataName.c_str(), (char *)out.str().c_str());
 	
 	pthread_mutex_unlock (&sMutex);
 }

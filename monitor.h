@@ -17,7 +17,9 @@ private:
 	void monitorCallback(std::string dataName, WBMsg *value);
         void callback(guWhiteboard::WBTypes t, gu_simple_message *msg);
         whiteboard_watcher *watcher;    /** new whiteboard object */
+#ifdef USE_OLD_WHITEBOARD
         guWhiteboard::Whiteboard *wb;	/**< Whiteboard object. */
         guWhiteboard::Whiteboard::WBResult r; /**< Return message from wb methods. */
-	pthread_mutex_t  sMutex; /**< Keep things thread safe, don't want two callbacks running at the same time. */ 	
+#endif
+	pthread_mutex_t  sMutex; /**< Keep things thread safe, don't want two callbacks running at the same time. */
 };

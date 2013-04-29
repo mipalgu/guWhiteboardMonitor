@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F14043F3172E600C00EB63ED /* guwhiteboardtypelist_c_typestrings_generated.c in Sources */ = {isa = PBXBuildFile; fileRef = F14043F2172E600C00EB63ED /* guwhiteboardtypelist_c_typestrings_generated.c */; };
+		F14043F5172E602B00EB63ED /* guwhiteboardgetter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F14043F4172E602B00EB63ED /* guwhiteboardgetter.cpp */; };
+		F14043F7172E618E00EB63ED /* guwhiteboardposter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F14043F6172E618E00EB63ED /* guwhiteboardposter.cpp */; };
+		F14043F9172E642500EB63ED /* gugenericwhiteboardobject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F14043F8172E642500EB63ED /* gugenericwhiteboardobject.cpp */; };
 		F189B2F514A4231B0051D2F0 /* guWhiteboardMonitor.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = F189B2F414A4231B0051D2F0 /* guWhiteboardMonitor.1 */; };
 		F189B2FD14A423950051D2F0 /* monitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F189B2FB14A423950051D2F0 /* monitor.cpp */; };
 		F189B31114A423A30051D2F0 /* gusimplewhiteboard.c in Sources */ = {isa = PBXBuildFile; fileRef = F189B2FF14A423A30051D2F0 /* gusimplewhiteboard.c */; };
@@ -67,6 +71,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F14043F2172E600C00EB63ED /* guwhiteboardtypelist_c_typestrings_generated.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = guwhiteboardtypelist_c_typestrings_generated.c; sourceTree = "<group>"; };
+		F14043F4172E602B00EB63ED /* guwhiteboardgetter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = guwhiteboardgetter.cpp; sourceTree = "<group>"; };
+		F14043F6172E618E00EB63ED /* guwhiteboardposter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = guwhiteboardposter.cpp; sourceTree = "<group>"; };
+		F14043F8172E642500EB63ED /* gugenericwhiteboardobject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gugenericwhiteboardobject.cpp; sourceTree = "<group>"; };
 		F189B2EE14A4231B0051D2F0 /* guWhiteboardMonitor */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = guWhiteboardMonitor; sourceTree = BUILT_PRODUCTS_DIR; };
 		F189B2F414A4231B0051D2F0 /* guWhiteboardMonitor.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = guWhiteboardMonitor.1; sourceTree = "<group>"; };
 		F189B2FB14A423950051D2F0 /* monitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = monitor.cpp; sourceTree = "<group>"; };
@@ -224,6 +232,9 @@
 		F189B2FE14A423A30051D2F0 /* gusimplewhiteboard */ = {
 			isa = PBXGroup;
 			children = (
+				F14043F8172E642500EB63ED /* gugenericwhiteboardobject.cpp */,
+				F14043F4172E602B00EB63ED /* guwhiteboardgetter.cpp */,
+				F14043F6172E618E00EB63ED /* guwhiteboardposter.cpp */,
 				F189B2FF14A423A30051D2F0 /* gusimplewhiteboard.c */,
 				F189B30014A423A30051D2F0 /* gusimplewhiteboard.h */,
 				F189B30114A423A30051D2F0 /* WBFunctor.h */,
@@ -232,6 +243,7 @@
 				F189B30414A423A30051D2F0 /* Whiteboard.h */,
 				F189B30514A423A30051D2F0 /* WhiteboardConstants.cc */,
 				F189B30614A423A30051D2F0 /* WhiteboardConstants.h */,
+				F14043F2172E600C00EB63ED /* guwhiteboardtypelist_c_typestrings_generated.c */,
 				F189B30714A423A30051D2F0 /* gusimplewhiteboard.xcodeproj */,
 				F189B30814A423A30051D2F0 /* SimpleWhiteboardTest */,
 			);
@@ -554,6 +566,10 @@
 				F189B31214A423A30051D2F0 /* Whiteboard.cc in Sources */,
 				F189B31314A423A30051D2F0 /* WhiteboardConstants.cc in Sources */,
 				F189B38514A423C50051D2F0 /* gu_util.cpp in Sources */,
+				F14043F3172E600C00EB63ED /* guwhiteboardtypelist_c_typestrings_generated.c in Sources */,
+				F14043F5172E602B00EB63ED /* guwhiteboardgetter.cpp in Sources */,
+				F14043F7172E618E00EB63ED /* guwhiteboardposter.cpp in Sources */,
+				F14043F9172E642500EB63ED /* gugenericwhiteboardobject.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,6 +581,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LIBRARY = "libc++";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -583,6 +600,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/../gusimplewhiteboard",
 					"$(SRCROOT)/../../Common",
+					"$(SRCROOT)/../gusimplewhiteboard/typeClassDefs",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
@@ -595,6 +613,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LIBRARY = "libc++";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -607,6 +626,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/../gusimplewhiteboard",
 					"$(SRCROOT)/../../Common",
+					"$(SRCROOT)/../gusimplewhiteboard/typeClassDefs",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				SDKROOT = macosx;
