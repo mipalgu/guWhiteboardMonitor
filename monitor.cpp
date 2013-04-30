@@ -1,10 +1,11 @@
 #include <cstdio>
-
-#include "monitor.h"
-#include "guwhiteboardgetter.h"
 #include <sstream>
 #include <cstdlib>
 #include <cstring>
+
+#include "gu_util.h"
+#include "monitor.h"
+#include "guwhiteboardgetter.h"
 
 using namespace std;
 using namespace guWhiteboard;
@@ -89,7 +90,25 @@ GUMonitor::GUMonitor(char *whiteboardLocation, char **subscription_list, int n)
 		fprintf(stderr, "Failed to subscribe\n");
 	}
 #else
-        watcher->subscribe(createWBFunctor<GUMonitor>(this, &GUMonitor::callback, kwb_reserved_SubscribeToAllTypes_v));
+        int i = 0;
+        if (subscription_list)
+        {
+                while (n--)
+                {
+                        const char *type_name = *subscription_list++;
+                        WBTypes type = types_map[type_name];
+                        if (!type)
+                        {
+                                cerr << "Cannot subscribe to unknown type " << type_name << endl;
+                                continue;
+                        }
+                        watcher->subscribe(createWBFunctor<GUMonitor>(this, &GUMonitor::callback, type));
+                        ++i;
+                }
+                if (!i) exit(EXIT_FAILURE);
+                DBG(cout << "Subscribed to " << i << " types" << endl);
+        }
+        else watcher->subscribe(createWBFunctor<GUMonitor>(this, &GUMonitor::callback, kwb_reserved_SubscribeToAllTypes_v));
 #endif
 }
 
