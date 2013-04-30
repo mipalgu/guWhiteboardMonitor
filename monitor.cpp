@@ -57,39 +57,15 @@ int main(int argc, char **argv)
 
 GUMonitor::GUMonitor(char *whiteboardLocation, char **subscription_list, int n)
 {
-#ifdef USE_OLD_WHITEBOARD
-	//Setup
-	//----------------------------------
-	if(strlen(whiteboardLocation) == 0)
-	{
-		wb = new Whiteboard();		
-	}
-	else
-	{
-		wb = new Whiteboard(whiteboardLocation);
-	}
-#else
         watcher = new whiteboard_watcher();
 
-        (void) whiteboardLocation;
-        (void) subscription_list;
-        (void) n;
-#endif
+        (void) whiteboardLocation;      // XXX: we want that back!
+
 	pthread_mutex_init(&sMutex, NULL);
 	//----------------------------------
 	
 	//Subscriptions
 	//----------------------------------
-#ifdef USE_OLD_WHITEBOARD
-    if (subscription_list) while (n--)
-        wb->subscribeToMessage(*subscription_list++, WB_BIND(GUMonitor::monitorCallback), r);
-    else
-        wb->subscribeToMessage("*", WB_BIND(GUMonitor::monitorCallback), r);
-	if(r != Whiteboard::METHOD_OK)
-	{
-		fprintf(stderr, "Failed to subscribe\n");
-	}
-#else
         int i = 0;
         if (subscription_list)
         {
@@ -109,7 +85,6 @@ GUMonitor::GUMonitor(char *whiteboardLocation, char **subscription_list, int n)
                 DBG(cout << "Subscribed to " << i << " types" << endl);
         }
         else watcher->subscribe(createWBFunctor<GUMonitor>(this, &GUMonitor::callback, kwb_reserved_SubscribeToAllTypes_v));
-#endif
 }
 
 GUMonitor::~GUMonitor()
@@ -134,7 +109,7 @@ void GUMonitor::callback(guWhiteboard::WBTypes t, gu_simple_message *msg)
                         if (value == "##unsupported##")
                                 old_wb = true;
                         else
-                                printf("Type: \t%s\t\tValue:\t%s\n", dataName, value.c_str());
+                                printf("Type:   \t%s\t\tValue:\t%s\n", dataName, value.c_str());
                         pthread_mutex_unlock (&sMutex);
 
                         if (!old_wb) return;
@@ -149,57 +124,63 @@ void GUMonitor::callback(guWhiteboard::WBTypes t, gu_simple_message *msg)
                 }
         } while (0);
         WBMsg wbmsg = Whiteboard::getWBMsg(msg);
-        stringstream ss;
-        ss << "Old Type " << t;
-        monitorCallback(ss.str(), &wbmsg);
-}
+        gu_simple_whiteboard *wb = get_local_singleton_whiteboard()->wb;
+        string name;
+        if (t < GSW_NUM_TYPES_DEFINED)
+        {
+                const char *dataName = WBTypes_stringValues[t];
+                if (dataName) name = dataName;
+                else
+                {
+                        stringstream ss;
+                        ss << "Defined NULL Type " << t;
+                        name = ss.str();
+                }
+        }
+        else name = wb->typenames[t].hash.string;
 
-
-
-void GUMonitor::monitorCallback(std::string dataName, WBMsg *value)
-{	
 	pthread_mutex_lock (&sMutex);
-	
+
 	std::ostringstream out;
-	switch ((int)value->getType()) 
+	switch (int(wbmsg.getType()))
 	{
 		case WBMsg::TypeBool:
 		{
-			out << (int)value->getBoolValue();
+			out << int(wbmsg.getBoolValue());
 			break;
 		}
 		case WBMsg::TypeInt:
 		{
-			out << value->getIntValue();
+			out << wbmsg.getIntValue();
 			break;
 		}
 		case WBMsg::TypeFloat:
 		{
-			out << value->getFloatValue();
+			out << wbmsg.getFloatValue();
 			break;
 		}
 		case WBMsg::TypeString:
 		{
-			out << value->getStringValue();
+			out << wbmsg.getStringValue();
 			break;
 		}
 		case WBMsg::TypeArray:
-        {
-            const vector<int> &vec = value->getArrayValue();
-            size_t n = vec.size();
-            out << "( ";
-            for (size_t i = 0; i < n; i++)
-            {
-                out << vec[i];
-                if (i < n-1) out << ", ";
-            }
-            out << " )";
-        }
+                {
+                        const vector<int> &vec = wbmsg.getArrayValue();
+                        size_t n = vec.size();
+                        out << "( ";
+                        for (size_t i = 0; i < n; i++)
+                        {
+                                out << vec[i];
+                                if (i < n-1) out << ", ";
+                        }
+                        out << " )";
+                }
                         break;
 		default:
                         break;
 	}
-	printf("OType:\t%s\t\tValue:\t%s\n", (char *)dataName.c_str(), (char *)out.str().c_str());
-	
+	printf("%s %3.3d:\t%s\t\tValue:\t%s\n", t < GSW_NUM_TYPES_DEFINED ? "New" : "Old", t, (char *)name.c_str(), (char *)out.str().c_str());
+
 	pthread_mutex_unlock (&sMutex);
 }

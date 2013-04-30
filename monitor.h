@@ -3,6 +3,9 @@
  */
 
 #include "guwhiteboardwatcher.h"
+
+#define _FROM_WHITEBOARD_CC_    // shut up the whiteboard warning, I know what I'm doing
+
 #include "Whiteboard.h"
 
 
@@ -14,7 +17,6 @@ public:
 	~GUMonitor();
 	
 private:
-	void monitorCallback(std::string dataName, WBMsg *value);
         void callback(guWhiteboard::WBTypes t, gu_simple_message *msg);
         whiteboard_watcher *watcher;    /** new whiteboard object */
 #ifdef USE_OLD_WHITEBOARD
