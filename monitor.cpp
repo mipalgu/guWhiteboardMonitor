@@ -101,20 +101,30 @@ GUMonitor::~GUMonitor()
 
 void GUMonitor::callback(guWhiteboard::WBTypes t, gu_simple_message *msg)
 {
-        const char *dataName = WBTypes_stringValues[t];
+        if (int(t) >= 0 && int(t) < GSW_NUM_TYPES_DEFINED) do
+        {
+                const char *dataName = WBTypes_stringValues[t];
 
-        try             // try with a new message type
-        {
-                pthread_mutex_lock (&sMutex);
-                string value = getmsg(t, msg);
-                printf("Type: \t%s\t\tValue:\t%s\n", dataName, value.c_str());
-                pthread_mutex_unlock (&sMutex);
-        }
-        catch (...)     // no string conversion, fall back to old WB
-        {
-                WBMsg wbmsg = Whiteboard::getWBMsg(msg);
-                monitorCallback(dataName, &wbmsg);
-        }
+                if (!dataName)  // no data name, use old wb
+                        break;
+                try             // try with a new message type
+                {
+                        pthread_mutex_lock (&sMutex);
+                        string value = getmsg(t, msg);
+                        printf("Type: \t%s\t\tValue:\t%s\n", dataName, value.c_str());
+                        pthread_mutex_unlock (&sMutex);
+
+                        return;
+                }
+                catch (...)     // no string conversion, fall back to old WB
+                {
+                        pthread_mutex_unlock (&sMutex);
+                }
+        } while (0);
+        WBMsg wbmsg = Whiteboard::getWBMsg(msg);
+        stringstream ss;
+        ss << "Old Type " << t;
+        monitorCallback(ss.str(), &wbmsg);
 }
 
 
