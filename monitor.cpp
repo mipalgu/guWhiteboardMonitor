@@ -109,12 +109,20 @@ void GUMonitor::callback(guWhiteboard::WBTypes t, gu_simple_message *msg)
                         break;
                 try             // try with a new message type
                 {
+                        bool old_wb = false;
                         pthread_mutex_lock (&sMutex);
                         string value = getmsg(t, msg);
-                        printf("Type: \t%s\t\tValue:\t%s\n", dataName, value.c_str());
+                        if (value == "##unsupported##")
+                                old_wb = true;
+                        else
+                                printf("Type: \t%s\t\tValue:\t%s\n", dataName, value.c_str());
                         pthread_mutex_unlock (&sMutex);
 
-                        return;
+                        if (!old_wb) return;
+                }
+                catch (const char *) // no string conversion, fall back to old WB
+                {
+                        pthread_mutex_unlock (&sMutex);
                 }
                 catch (...)     // no string conversion, fall back to old WB
                 {
