@@ -19,18 +19,18 @@ int main(int argc, char **argv)
 	//Get passed in values
 	//-----------------------------------
 	int op;
-	char *specAddressOfWB = (char *)"";
+	int rwb = -1;
 	
-	while((op = getopt(argc, argv, "w:")) != -1)
+	while((op = getopt(argc, argv, "r:")) != -1)
 	{
 		switch(op)
 		{
-			case 'w':
-				specAddressOfWB = optarg;
+			case 'r':
+				rwb = atoi(optarg);
 				break;
 			case '?':			
 				fprintf(stderr, "\n\nUsage: guWhiteboardMonitor [OPTION] . . . \n");
-				fprintf(stderr, "-w, The name of the Whiteboard to connect to.\n");
+				fprintf(stderr, "-r, ID of the remote WB to connect to.\n");
 				return EXIT_FAILURE;
 			default:
 				break;
@@ -45,7 +45,7 @@ int main(int argc, char **argv)
     if (argc) subs = argv;
     
 	//Start game
-	GUMonitor *monitor = new GUMonitor(specAddressOfWB, subs, argc);
+	GUMonitor *monitor = new GUMonitor(rwb, subs, argc);
 	
 	//Currently waiting for events, loop to keep process from closing
 	while(monitor)
@@ -55,11 +55,12 @@ int main(int argc, char **argv)
 	return EXIT_FAILURE;
 }
 
-GUMonitor::GUMonitor(char *whiteboardLocation, char **subscription_list, int n)
+GUMonitor::GUMonitor(int rwb, char **subscription_list, int n)
 {
-        watcher = new whiteboard_watcher();
-
-        (void) whiteboardLocation;      // XXX: we want that back!
+        if(rwb > 0)
+                watcher = new whiteboard_watcher(gswr_new_whiteboard(rwb));
+        else
+                watcher = new whiteboard_watcher();
 
 	pthread_mutex_init(&sMutex, NULL);
 	//----------------------------------

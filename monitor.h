@@ -12,7 +12,7 @@
 class GUMonitor
 {
 public:
-	GUMonitor(char *whiteboardLocation = (char *)"", char **subscription_list = NULL, int n = 0);
+	GUMonitor(int rwb, char **subscription_list = NULL, int n = 0);
 	
 	~GUMonitor();
 	
