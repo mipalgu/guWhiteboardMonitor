@@ -5,6 +5,7 @@
 #
 BIN=guWhiteboardMonitor
 
+WFLAGS=-w
 ALL_TARGETS=host robot
 
 CPP_SRCS=monitor.cpp
