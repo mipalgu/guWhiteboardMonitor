@@ -777,6 +777,7 @@
 				F11F94F218E018E800E17493 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F189B2E814A4231B0051D2F0 /* Build configuration list for PBXProject "guWhiteboardMonitor" */ = {
 			isa = XCConfigurationList;
