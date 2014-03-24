@@ -20,6 +20,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F11F94FC18E018E800E17493 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F189B30714A423A30051D2F0 /* gusimplewhiteboard.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F11BC0BC176123DB0069F6FB;
+			remoteInfo = guudpwhiteboard;
+		};
+		F11F94FE18E018E800E17493 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F189B30714A423A30051D2F0 /* gusimplewhiteboard.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F19FA36B18DFE6280095B87D;
+			remoteInfo = simplewhiteboardtest_mk;
+		};
 		F16BB59615563ACB00148325 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F189B30714A423A30051D2F0 /* gusimplewhiteboard.xcodeproj */;
@@ -271,6 +285,8 @@
 				F16BB59715563ACB00148325 /* libguobjcwhiteboard.a */,
 				F16BB59915563ACB00148325 /* guobjcwhiteboardTests.octest */,
 				F16BB59B15563ACB00148325 /* libgusimplewhiteboardios.a */,
+				F11F94FD18E018E800E17493 /* guudpwhiteboard */,
+				F11F94FF18E018E800E17493 /* SimpleWhiteboardTest.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -468,6 +484,23 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXLegacyTarget section */
+		F11F94F018E018E800E17493 /* guWhiteboardMonitor_mk */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "clean host analyze test";
+			buildConfigurationList = F11F950018E018E800E17493 /* Build configuration list for PBXLegacyTarget "guWhiteboardMonitor_mk" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/local/bin/bmake;
+			buildWorkingDirectory = "";
+			dependencies = (
+			);
+			name = guWhiteboardMonitor_mk;
+			passBuildSettingsInEnvironment = 1;
+			productName = guWhiteboardMonitor_mk;
+		};
+/* End PBXLegacyTarget section */
+
 /* Begin PBXNativeTarget section */
 		F189B2ED14A4231B0051D2F0 /* guWhiteboardMonitor */ = {
 			isa = PBXNativeTarget;
@@ -514,11 +547,26 @@
 			projectRoot = "";
 			targets = (
 				F189B2ED14A4231B0051D2F0 /* guWhiteboardMonitor */,
+				F11F94F018E018E800E17493 /* guWhiteboardMonitor_mk */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		F11F94FD18E018E800E17493 /* guudpwhiteboard */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = guudpwhiteboard;
+			remoteRef = F11F94FC18E018E800E17493 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F11F94FF18E018E800E17493 /* SimpleWhiteboardTest.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SimpleWhiteboardTest.bundle;
+			remoteRef = F11F94FE18E018E800E17493 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		F16BB59715563ACB00148325 /* libguobjcwhiteboard.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -576,6 +624,64 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		F11F94F118E018E800E17493 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F11F94F218E018E800E17493 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		F189B2F614A4231B0051D2F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -650,6 +756,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F11F950018E018E800E17493 /* Build configuration list for PBXLegacyTarget "guWhiteboardMonitor_mk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F11F94F118E018E800E17493 /* Debug */,
+				F11F94F218E018E800E17493 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		F189B2E814A4231B0051D2F0 /* Build configuration list for PBXProject "guWhiteboardMonitor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
