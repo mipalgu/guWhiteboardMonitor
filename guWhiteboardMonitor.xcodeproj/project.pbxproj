@@ -891,6 +891,7 @@
 				F1FABD3119026E4E001AD476 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
