@@ -12,6 +12,7 @@ HDRS=monitor.h
 
 NEW_WHITEBOARD_SRCS+=guwhiteboardgetter.cpp guwhiteboardposter.cpp
 
+.include "../../mk/visioncommon.mk"
 .include "../../mk/libcxx.mk"
 .include "../../mk/whiteboard.mk"	# required for whiteboard clients
 .include "../../mk/mipal.mk"		# comes last!
