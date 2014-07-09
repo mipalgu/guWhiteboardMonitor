@@ -295,7 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				F189B31814A423A30051D2F0 /* libgusimplewhiteboard.a */,
-				F189B31A14A423A30051D2F0 /* SimpleWhiteboardTest.octest */,
+				F189B31A14A423A30051D2F0 /* SimpleWhiteboardTest.xctest */,
 				F16BB59715563ACB00148325 /* libguobjcwhiteboard.a */,
 				F16BB59915563ACB00148325 /* guobjcwhiteboardTests.octest */,
 				F16BB59B15563ACB00148325 /* libgusimplewhiteboardios.a */,
@@ -626,10 +626,10 @@
 			remoteRef = F189B31714A423A30051D2F0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		F189B31A14A423A30051D2F0 /* SimpleWhiteboardTest.octest */ = {
+		F189B31A14A423A30051D2F0 /* SimpleWhiteboardTest.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = SimpleWhiteboardTest.octest;
+			path = SimpleWhiteboardTest.xctest;
 			remoteRef = F189B31914A423A30051D2F0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -731,6 +731,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -739,7 +740,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -770,6 +771,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -779,7 +781,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
