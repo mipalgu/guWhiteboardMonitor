@@ -14,8 +14,6 @@
 		F189B2F514A4231B0051D2F0 /* guWhiteboardMonitor.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = F189B2F414A4231B0051D2F0 /* guWhiteboardMonitor.1 */; };
 		F189B2FD14A423950051D2F0 /* monitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F189B2FB14A423950051D2F0 /* monitor.cpp */; };
 		F189B31114A423A30051D2F0 /* gusimplewhiteboard.c in Sources */ = {isa = PBXBuildFile; fileRef = F189B2FF14A423A30051D2F0 /* gusimplewhiteboard.c */; };
-		F189B31214A423A30051D2F0 /* Whiteboard.cc in Sources */ = {isa = PBXBuildFile; fileRef = F189B30314A423A30051D2F0 /* Whiteboard.cc */; };
-		F189B31314A423A30051D2F0 /* WhiteboardConstants.cc in Sources */ = {isa = PBXBuildFile; fileRef = F189B30514A423A30051D2F0 /* WhiteboardConstants.cc */; };
 		F189B38514A423C50051D2F0 /* gu_util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F189B32614A423BF0051D2F0 /* gu_util.cpp */; };
 /* End PBXBuildFile section */
 
@@ -656,8 +654,6 @@
 			files = (
 				F189B2FD14A423950051D2F0 /* monitor.cpp in Sources */,
 				F189B31114A423A30051D2F0 /* gusimplewhiteboard.c in Sources */,
-				F189B31214A423A30051D2F0 /* Whiteboard.cc in Sources */,
-				F189B31314A423A30051D2F0 /* WhiteboardConstants.cc in Sources */,
 				F189B38514A423C50051D2F0 /* gu_util.cpp in Sources */,
 				F14043F3172E600C00EB63ED /* guwhiteboardtypelist_c_typestrings_generated.c in Sources */,
 				F14043F5172E602B00EB63ED /* guwhiteboardgetter.cpp in Sources */,
