@@ -124,7 +124,9 @@ void GUMonitor::callback(guWhiteboard::WBTypes t, gu_simple_message *msg)
                         pthread_mutex_unlock (&sMutex);
                 }
         } while (0);
+#ifdef USE_OLD_WHITEBOARD
         WBMsg wbmsg = Whiteboard::getWBMsg(msg);
+#endif //USE_OLD_WHITEBOARD 
         gu_simple_whiteboard *wb = get_local_singleton_whiteboard()->wb;
         string name;
         if (t < GSW_NUM_TYPES_DEFINED)
@@ -143,6 +145,7 @@ void GUMonitor::callback(guWhiteboard::WBTypes t, gu_simple_message *msg)
 	pthread_mutex_lock (&sMutex);
 
 	std::ostringstream out;
+#ifdef USE_OLD_WHITEBOARD
 	switch (int(wbmsg.getType()))
 	{
 		case WBMsg::TypeBool:
@@ -181,6 +184,7 @@ void GUMonitor::callback(guWhiteboard::WBTypes t, gu_simple_message *msg)
 		default:
                         break;
 	}
+#endif //USE_OLD_WHITEBOARD
 	printf("%s %3.3d:\t%s\t\tValue:\t%s\n", t < GSW_NUM_TYPES_DEFINED ? "New" : "Old", t, (char *)name.c_str(), (char *)out.str().c_str());
 
 	pthread_mutex_unlock (&sMutex);
