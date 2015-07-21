@@ -109,10 +109,6 @@
 		F189B30014A423A30051D2F0 /* gusimplewhiteboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gusimplewhiteboard.h; sourceTree = "<group>"; };
 		F189B30114A423A30051D2F0 /* WBFunctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = WBFunctor.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		F189B30214A423A30051D2F0 /* WBMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBMsg.h; sourceTree = "<group>"; };
-		F189B30314A423A30051D2F0 /* Whiteboard.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Whiteboard.cc; sourceTree = "<group>"; };
-		F189B30414A423A30051D2F0 /* Whiteboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Whiteboard.h; sourceTree = "<group>"; };
-		F189B30514A423A30051D2F0 /* WhiteboardConstants.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WhiteboardConstants.cc; sourceTree = "<group>"; };
-		F189B30614A423A30051D2F0 /* WhiteboardConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhiteboardConstants.h; sourceTree = "<group>"; };
 		F189B30714A423A30051D2F0 /* gusimplewhiteboard.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = gusimplewhiteboard.xcodeproj; sourceTree = "<group>"; };
 		F189B30C14A423A30051D2F0 /* SimpleWhiteboardTest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SimpleWhiteboardTest-Info.plist"; sourceTree = "<group>"; };
 		F189B30D14A423A30051D2F0 /* SimpleWhiteboardTest-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SimpleWhiteboardTest-Prefix.pch"; sourceTree = "<group>"; };
@@ -265,10 +261,6 @@
 				F189B30014A423A30051D2F0 /* gusimplewhiteboard.h */,
 				F189B30114A423A30051D2F0 /* WBFunctor.h */,
 				F189B30214A423A30051D2F0 /* WBMsg.h */,
-				F189B30314A423A30051D2F0 /* Whiteboard.cc */,
-				F189B30414A423A30051D2F0 /* Whiteboard.h */,
-				F189B30514A423A30051D2F0 /* WhiteboardConstants.cc */,
-				F189B30614A423A30051D2F0 /* WhiteboardConstants.h */,
 				F14043F2172E600C00EB63ED /* guwhiteboardtypelist_c_typestrings_generated.c */,
 				F189B30714A423A30051D2F0 /* gusimplewhiteboard.xcodeproj */,
 				F189B30814A423A30051D2F0 /* SimpleWhiteboardTest */,
@@ -606,7 +598,7 @@
 		F16BB59915563ACB00148325 /* guobjcwhiteboardTests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = guobjcwhiteboardTests.octest;
+			path = guobjcwhiteboardTests.xctest;
 			remoteRef = F16BB59815563ACB00148325 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};

@@ -4,8 +4,10 @@
 
 #include "guwhiteboardwatcher.h"
 
+#pragma clang diagnostic ignored "-Wreserved-id-macro"
+
 #ifdef USE_OLD_WHITEBOARD
-#define _FROM_WHITEBOARD_CC_    // shut up the whiteboard warning, I know what I'm doing
+#define FROM_WHITEBOARD_CC_    // shut up the whiteboard warning, I know what I'm doing
 
 #include "Whiteboard.h"
 #endif

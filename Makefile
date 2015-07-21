@@ -5,10 +5,12 @@
 #
 BIN=guWhiteboardMonitor
 
-ALL_TARGETS=host robot
+ALL_TARGETS=host robot doc
 
 CPP_SRCS=monitor.cpp
 HDRS=monitor.h 
+DOC_HDRS=mainpage.md
+CI_SERVER_DOC_SUBDIR=utils
 
 NEW_WHITEBOARD_SRCS+=guwhiteboardgetter.cpp guwhiteboardposter.cpp
 
