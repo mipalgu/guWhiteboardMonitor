@@ -5,7 +5,7 @@
 #
 BIN=guWhiteboardMonitor
 
-ALL_TARGETS=host robot doc
+ALL_TARGETS=host robot analyse xc doc
 
 CPP_SRCS=monitor.cpp
 HDRS=monitor.h 
