@@ -1,7 +1,7 @@
 /* MiPAL 2011
  Author: Carl Lusty
  */
-
+#include "gusimplewhiteboard.h"
 #include "guwhiteboardwatcher.h"
 
 #pragma clang diagnostic ignored "-Wreserved-id-macro"
