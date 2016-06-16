@@ -20,17 +20,32 @@ int main(int argc, char **argv)
 	//-----------------------------------
 	int op;
 	int rwb = -1;
-	
-	while((op = getopt(argc, argv, "r:")) != -1)
+
+	const char *wbname = NULL;
+#ifdef CUSTOM_WB_NAME
+	const char *default_name = CUSTOM_WB_NAME;
+	wbname = default_name;
+#else
+	const char *default_name = GSW_DEFAULT_NAME;
+#ifndef GSW_IOS_DEVICE
+	const char *env = getenv(GSW_DEFAULT_ENV);
+	if (env && *env) default_name = env;
+#endif
+#endif
+	while((op = getopt(argc, argv, "r:w:")) != -1)
 	{
 		switch(op)
 		{
 			case 'r':
 				rwb = atoi(optarg);
 				break;
+			case 'w':
+				wbname = optarg;
+				break;
 			case '?':			
 				fprintf(stderr, "\n\nUsage: guWhiteboardMonitor [OPTION] . . . \n");
-				fprintf(stderr, "-r, ID of the remote WB to connect to.\n");
+				fprintf(stderr, "-r\tID of the remote WB to connect to.\n");
+				fprintf(stderr, "-w\tname of the whiteboard to listen on (other than %s).\n", default_name);
 				return EXIT_FAILURE;
 			default:
 				break;
@@ -45,7 +60,7 @@ int main(int argc, char **argv)
     if (argc) subs = argv;
     
 	//Start game
-	GUMonitor *monitor = new GUMonitor(rwb, subs, argc);
+	GUMonitor *monitor = new GUMonitor(wbname, rwb, subs, argc);
 	
 	//Currently waiting for events, loop to keep process from closing
 	while(monitor)
@@ -55,12 +70,17 @@ int main(int argc, char **argv)
 	return EXIT_FAILURE;
 }
 
-GUMonitor::GUMonitor(int rwb, char **subscription_list, int n)
+GUMonitor::GUMonitor(const char *name, int rwb, char **subscription_list, int n)
 {
+	wbd = NULL;
         if(rwb > 0)
                 watcher = new whiteboard_watcher(gswr_new_whiteboard(rwb));
-        else
-                watcher = new whiteboard_watcher();
+        else if (name)
+	{
+		wbd = gsw_new_whiteboard(name);
+		watcher = new whiteboard_watcher(wbd);
+	}
+        else watcher = new whiteboard_watcher();
 
 	pthread_mutex_init(&sMutex, NULL);
 	//----------------------------------
@@ -90,7 +110,7 @@ GUMonitor::GUMonitor(int rwb, char **subscription_list, int n)
 
 GUMonitor::~GUMonitor()
 {
-	
+	if (wbd) gsw_free_whiteboard(wbd);
 }
 
 
