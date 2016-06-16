@@ -129,6 +129,8 @@ void GUMonitor::callback(guWhiteboard::WBTypes t, gu_simple_message *msg)
 #endif //USE_OLD_WHITEBOARD 
         gu_simple_whiteboard *wb = get_local_singleton_whiteboard()->wb;
         string name;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wtautological-constant-out-of-range-compare"
         if (t < GSW_NUM_TYPES_DEFINED)
         {
                 const char *dataName = WBTypes_stringValues[t];
@@ -188,4 +190,5 @@ void GUMonitor::callback(guWhiteboard::WBTypes t, gu_simple_message *msg)
 	printf("%s %3.3d:\t%s\t\tValue:\t%s\n", t < GSW_NUM_TYPES_DEFINED ? "New" : "Old", t, (char *)name.c_str(), (char *)out.str().c_str());
 
 	pthread_mutex_unlock (&sMutex);
+#pragma clang diagnostic pop
 }
