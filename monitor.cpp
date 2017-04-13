@@ -20,17 +20,32 @@ int main(int argc, char **argv)
 	//-----------------------------------
 	int op;
 	int rwb = -1;
-	
-	while((op = getopt(argc, argv, "r:")) != -1)
+
+	const char *wbname = NULL;
+#ifdef CUSTOM_WB_NAME
+	const char *default_name = CUSTOM_WB_NAME;
+	wbname = default_name;
+#else
+	const char *default_name = GSW_DEFAULT_NAME;
+#ifndef GSW_IOS_DEVICE
+	const char *env = getenv(GSW_DEFAULT_ENV);
+	if (env && *env) default_name = env;
+#endif
+#endif
+	while((op = getopt(argc, argv, "r:w:")) != -1)
 	{
 		switch(op)
 		{
 			case 'r':
 				rwb = atoi(optarg);
 				break;
+			case 'w':
+				wbname = optarg;
+				break;
 			case '?':			
 				fprintf(stderr, "\n\nUsage: guWhiteboardMonitor [OPTION] . . . \n");
-				fprintf(stderr, "-r, ID of the remote WB to connect to.\n");
+				fprintf(stderr, "-r\tID of the remote WB to connect to.\n");
+				fprintf(stderr, "-w\tname of the whiteboard to listen on (other than %s).\n", default_name);
 				return EXIT_FAILURE;
 			default:
 				break;
@@ -45,7 +60,7 @@ int main(int argc, char **argv)
     if (argc) subs = argv;
     
 	//Start game
-	GUMonitor *monitor = new GUMonitor(rwb, subs, argc);
+	GUMonitor *monitor = new GUMonitor(wbname, rwb, subs, argc);
 	
 	//Currently waiting for events, loop to keep process from closing
 	while(monitor)
@@ -55,12 +70,17 @@ int main(int argc, char **argv)
 	return EXIT_FAILURE;
 }
 
-GUMonitor::GUMonitor(int rwb, char **subscription_list, int n)
+GUMonitor::GUMonitor(const char *name, int rwb, char **subscription_list, int n)
 {
+	wbd = NULL;
         if(rwb > 0)
                 watcher = new whiteboard_watcher(gswr_new_whiteboard(rwb));
-        else
-                watcher = new whiteboard_watcher();
+        else if (name)
+	{
+		wbd = gsw_new_whiteboard(name);
+		watcher = new whiteboard_watcher(wbd);
+	}
+        else watcher = new whiteboard_watcher();
 
 	pthread_mutex_init(&sMutex, NULL);
 	//----------------------------------
@@ -90,7 +110,7 @@ GUMonitor::GUMonitor(int rwb, char **subscription_list, int n)
 
 GUMonitor::~GUMonitor()
 {
-	
+	if (wbd) gsw_free_whiteboard(wbd);
 }
 
 
@@ -110,7 +130,7 @@ void GUMonitor::callback(guWhiteboard::WBTypes t, gu_simple_message *msg)
                         if (value == "##unsupported##")
                                 old_wb = true;
                         else
-                                printf("Type:   \t%s\t\tValue:\t%s\n", dataName, value.c_str());
+                                printf("Type:\t%s\t\tValue:\t%s\n", dataName, value.c_str());
                         pthread_mutex_unlock (&sMutex);
 
                         if (!old_wb) return;
@@ -129,6 +149,8 @@ void GUMonitor::callback(guWhiteboard::WBTypes t, gu_simple_message *msg)
 #endif //USE_OLD_WHITEBOARD 
         gu_simple_whiteboard *wb = get_local_singleton_whiteboard()->wb;
         string name;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wtautological-constant-out-of-range-compare"
         if (t < GSW_NUM_TYPES_DEFINED)
         {
                 const char *dataName = WBTypes_stringValues[t];
@@ -188,4 +210,5 @@ void GUMonitor::callback(guWhiteboard::WBTypes t, gu_simple_message *msg)
 	printf("%s %3.3d:\t%s\t\tValue:\t%s\n", t < GSW_NUM_TYPES_DEFINED ? "New" : "Old", t, (char *)name.c_str(), (char *)out.str().c_str());
 
 	pthread_mutex_unlock (&sMutex);
+#pragma clang diagnostic pop
 }
