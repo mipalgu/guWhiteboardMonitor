@@ -207,7 +207,7 @@ void GUMonitor::callback(guWhiteboard::WBTypes t, gu_simple_message *msg)
                         break;
 	}
 #endif //USE_OLD_WHITEBOARD
-	printf("%s %3.3d:\t%s\t\tValue:\t%s\n", t < GSW_NUM_TYPES_DEFINED ? "New" : "Old", t, (char *)name.c_str(), (char *)out.str().c_str());
+	printf("%s %3.3d:\t%s\t\tValue:\t%s\n", t < GSW_NUM_TYPES_DEFINED ? "New" : "Old", t, name.c_str(), out.str().c_str());
 
 	pthread_mutex_unlock (&sMutex);
 #pragma clang diagnostic pop
