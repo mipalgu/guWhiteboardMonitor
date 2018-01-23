@@ -130,7 +130,9 @@ void GUMonitor::callback(guWhiteboard::WBTypes t, gu_simple_message *msg)
                         if (value == "##unsupported##")
                                 old_wb = true;
                         else
-                                printf("Type:\t%s\t\tValue:\t%s\n", dataName, value.c_str());
+				{ printf("Type:\t%s\t\tValue:\t%s\n", dataName, value.c_str());
+			          fflush(stdout); 
+				}
                         pthread_mutex_unlock (&sMutex);
 
                         if (!old_wb) return;
