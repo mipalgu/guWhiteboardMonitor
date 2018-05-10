@@ -21,7 +21,7 @@ int main(int argc, char **argv)
 	int op;
 	int rwb = -1;
 
-	const char *wbname = NULL;
+	const char *wbname = NULLPTR;
 #ifdef CUSTOM_WB_NAME
 	const char *default_name = CUSTOM_WB_NAME;
 	wbname = default_name;
@@ -56,7 +56,7 @@ int main(int argc, char **argv)
     argv += optind;
     argc -= optind;
     
-    char **subs = NULL;
+    char **subs = NULLPTR;
     if (argc) subs = argv;
     
 	//Start game
@@ -72,7 +72,7 @@ int main(int argc, char **argv)
 
 GUMonitor::GUMonitor(const char *name, int rwb, char **subscription_list, int n)
 {
-	wbd = NULL;
+	wbd = NULLPTR;
         if(rwb > 0)
                 watcher = new whiteboard_watcher(gswr_new_whiteboard(rwb));
         else if (name)
@@ -82,7 +82,7 @@ GUMonitor::GUMonitor(const char *name, int rwb, char **subscription_list, int n)
 	}
         else watcher = new whiteboard_watcher();
 
-	pthread_mutex_init(&sMutex, NULL);
+	pthread_mutex_init(&sMutex, NULLPTR);
 	//----------------------------------
 	
 	//Subscriptions

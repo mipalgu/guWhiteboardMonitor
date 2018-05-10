@@ -15,7 +15,7 @@
 class GUMonitor
 {
 public:
-	GUMonitor(const char *name, int rwb, char **subscription_list = NULL, int n = 0);
+	GUMonitor(const char *name, int rwb, char **subscription_list = NULLPTR, int n = 0);
 	
 	~GUMonitor();
 	
