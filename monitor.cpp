@@ -10,6 +10,23 @@
 using namespace std;
 using namespace guWhiteboard;
 
+#ifdef CUSTOM_WB_NAME
+const char *default_name = CUSTOM_WB_NAME;
+#else
+const char *default_name = GSW_DEFAULT_NAME;
+#endif
+
+void usage(const char *cmd) __attribute((noreturn));
+void usage(const char *cmd)
+{
+	fprintf(stderr, "\n\nUsage: %s [OPTION] . . . \n", cmd);
+	fprintf(stderr, "    -r\tID of the remote WB to connect to.\n");
+	fprintf(stderr, "    -s\tOutput gusimplewhiteboard poster commands.\n");
+	fprintf(stderr, "    -t\tAdd time stamps.\n");
+	fprintf(stderr, "    -w\tname of the whiteboard to listen on (other than %s).\n", default_name);
+	exit(EXIT_FAILURE);
+}
+
 
 int main(int argc, char **argv) 
 {
@@ -22,33 +39,35 @@ int main(int argc, char **argv)
 	int rwb = -1;
 
 	const char *wbname = NULLPTR;
+        bool printTimeStamps = false;
+        bool printScript = false;
 #ifdef CUSTOM_WB_NAME
-	const char *default_name = CUSTOM_WB_NAME;
 	wbname = default_name;
 #else
-	const char *default_name = GSW_DEFAULT_NAME;
 #ifndef GSW_IOS_DEVICE
 	const char *env = getenv(GSW_DEFAULT_ENV);
 	if (env && *env) default_name = env;
 #endif
 #endif
-	while((op = getopt(argc, argv, "r:w:")) != -1)
+        while((op = getopt(argc, argv, "r:stw:")) != -1)
 	{
 		switch(op)
 		{
 			case 'r':
 				rwb = atoi(optarg);
 				break;
+                        case 's':
+                                printScript = true;
+                                break;
+                        case 't':
+                                printTimeStamps = true;
+                                break;
 			case 'w':
 				wbname = optarg;
 				break;
 			case '?':			
-				fprintf(stderr, "\n\nUsage: guWhiteboardMonitor [OPTION] . . . \n");
-				fprintf(stderr, "-r\tID of the remote WB to connect to.\n");
-				fprintf(stderr, "-w\tname of the whiteboard to listen on (other than %s).\n", default_name);
-				return EXIT_FAILURE;
 			default:
-				break;
+				usage(argv[0]);
 		}
 	}	
 	//-----------------------------------
@@ -60,7 +79,7 @@ int main(int argc, char **argv)
     if (argc) subs = argv;
     
 	//Start game
-	GUMonitor *monitor = new GUMonitor(wbname, rwb, subs, argc);
+	GUMonitor *monitor = new GUMonitor(wbname, rwb, subs, argc, printTimeStamps, printScript);
 	
 	//Currently waiting for events, loop to keep process from closing
 	while(monitor)
@@ -70,8 +89,10 @@ int main(int argc, char **argv)
 	return EXIT_FAILURE;
 }
 
-GUMonitor::GUMonitor(const char *name, int rwb, char **subscription_list, int n)
+GUMonitor::GUMonitor(const char *name, int rwb, char **subscription_list, int n, bool output_timestamps, bool output_script)
 {
+	printTimeStamps = output_timestamps;
+	printScript = output_script;
 	wbd = NULLPTR;
         if(rwb > 0)
                 watcher = new whiteboard_watcher(gswr_new_whiteboard(rwb));
@@ -83,6 +104,7 @@ GUMonitor::GUMonitor(const char *name, int rwb, char **subscription_list, int n)
         else watcher = new whiteboard_watcher();
 
 	pthread_mutex_init(&sMutex, NULLPTR);
+	timeStamp = get_utime();
 	//----------------------------------
 	
 	//Subscriptions
@@ -116,6 +138,10 @@ GUMonitor::~GUMonitor()
 
 void GUMonitor::callback(guWhiteboard::WBTypes t, gu_simple_message *msg)
 {
+	const long long currentTime = get_utime();
+	const long long deltaMicros = currentTime - timeStamp;
+	const double deltaSecs = static_cast<double>(deltaMicros) / 1000000.0;
+	timeStamp = currentTime;
         if (int(t) >= 0 && int(t) < GSW_NUM_TYPES_DEFINED) do
         {
                 const char *dataName = WBTypes_stringValues[t];
@@ -130,9 +156,21 @@ void GUMonitor::callback(guWhiteboard::WBTypes t, gu_simple_message *msg)
                         if (value == "##unsupported##")
                                 old_wb = true;
                         else
-				{ printf("Type:\t%s\t\tValue:\t%s\n", dataName, value.c_str());
-			          fflush(stdout); 
-				}
+			{
+                                if (printTimeStamps)
+                                {
+                                        if (printScript)
+                                                fputs("sleep ", stdout);
+                                        printf("%g\t", deltaSecs);
+                                        if (printScript)
+                                                fputs("; ", stdout);
+                                }
+                                if (printScript)
+                                        printf("gusimplewhiteboardposter -m \"%s\" -d \"%s\"\n", dataName, value.c_str());
+                                else
+                                        printf("Type:\t%s\t\tValue:\t%s\n", dataName, value.c_str());
+			        fflush(stdout);
+			}
                         pthread_mutex_unlock (&sMutex);
 
                         if (!old_wb) return;

@@ -81,6 +81,13 @@
 			remoteGlobalIDString = F1ED58A418E7EF1400864A87;
 			remoteInfo = wbPerfTests;
 		};
+		F1FBE2C920C924D0001F6773 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F189B30714A423A30051D2F0 /* gusimplewhiteboard.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F19F051F1B3A7EBD00F34B4D;
+			remoteInfo = swift_wb;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -103,7 +110,7 @@
 		F14043F8172E642500EB63ED /* gugenericwhiteboardobject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gugenericwhiteboardobject.cpp; sourceTree = "<group>"; };
 		F189B2EE14A4231B0051D2F0 /* guWhiteboardMonitor */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = guWhiteboardMonitor; sourceTree = BUILT_PRODUCTS_DIR; };
 		F189B2F414A4231B0051D2F0 /* guWhiteboardMonitor.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = guWhiteboardMonitor.1; sourceTree = "<group>"; };
-		F189B2FB14A423950051D2F0 /* monitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = monitor.cpp; sourceTree = "<group>"; };
+		F189B2FB14A423950051D2F0 /* monitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 8; lastKnownFileType = sourcecode.cpp.cpp; path = monitor.cpp; sourceTree = "<group>"; tabWidth = 8; };
 		F189B2FC14A423950051D2F0 /* monitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = monitor.h; sourceTree = "<group>"; };
 		F189B2FF14A423A30051D2F0 /* gusimplewhiteboard.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gusimplewhiteboard.c; sourceTree = "<group>"; };
 		F189B30014A423A30051D2F0 /* gusimplewhiteboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gusimplewhiteboard.h; sourceTree = "<group>"; };
@@ -287,12 +294,13 @@
 				F189B31814A423A30051D2F0 /* libgusimplewhiteboard.a */,
 				F189B31A14A423A30051D2F0 /* SimpleWhiteboardTest.xctest */,
 				F16BB59715563ACB00148325 /* libguobjcwhiteboard.a */,
-				F16BB59915563ACB00148325 /* guobjcwhiteboardTests.octest */,
+				F16BB59915563ACB00148325 /* guobjcwhiteboardTests.xctest */,
 				F16BB59B15563ACB00148325 /* libgusimplewhiteboardios.a */,
 				F11F94FD18E018E800E17493 /* guudpwhiteboard */,
 				F11F94FF18E018E800E17493 /* SimpleWhiteboardTest.bundle */,
 				F1FABD4219026E4E001AD476 /* wbperf */,
 				F1FABD4419026E4E001AD476 /* wbPerfTests.octest */,
+				F1FBE2CA20C924D0001F6773 /* swift_wb */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -595,7 +603,7 @@
 			remoteRef = F16BB59615563ACB00148325 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		F16BB59915563ACB00148325 /* guobjcwhiteboardTests.octest */ = {
+		F16BB59915563ACB00148325 /* guobjcwhiteboardTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = guobjcwhiteboardTests.xctest;
@@ -635,6 +643,13 @@
 			fileType = wrapper.cfbundle;
 			path = wbPerfTests.octest;
 			remoteRef = F1FABD4319026E4E001AD476 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F1FBE2CA20C924D0001F6773 /* swift_wb */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = swift_wb;
+			remoteRef = F1FBE2C920C924D0001F6773 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -748,6 +763,7 @@
 					"$(SRCROOT)/../gusimplewhiteboard",
 					"$(SRCROOT)/../../Common",
 					"$(SRCROOT)/../gusimplewhiteboard/typeClassDefs",
+					"$(SRCROOT)/..",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
@@ -782,6 +798,7 @@
 					"$(SRCROOT)/../gusimplewhiteboard",
 					"$(SRCROOT)/../../Common",
 					"$(SRCROOT)/../gusimplewhiteboard/typeClassDefs",
+					"$(SRCROOT)/..",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				SDKROOT = macosx;
