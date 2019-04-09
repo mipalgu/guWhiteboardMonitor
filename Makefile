@@ -5,7 +5,7 @@
 #
 BIN=guWhiteboardMonitor
 
-ALL_TARGETS=host atom atom1 geode doc
+ALL_TARGETS=host atom doc
 
 CPP_SRCS=monitor.cpp
 HDRS=monitor.h 
