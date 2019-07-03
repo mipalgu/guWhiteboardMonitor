@@ -217,6 +217,7 @@
 		F189B38214A423BF0051D2F0 /* guWhiteboardServerLib.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = guWhiteboardServerLib.cpp; path = ../../Common/WhiteboardSoapClient/guWhiteboardServerLib.cpp; sourceTree = "<group>"; };
 		F189B38314A423BF0051D2F0 /* guWhiteboardStub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = guWhiteboardStub.h; path = ../../Common/WhiteboardSoapClient/guWhiteboardStub.h; sourceTree = "<group>"; };
 		F189B38414A423BF0051D2F0 /* naoqi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = naoqi.h; path = ../../Common/WhiteboardSoapClient/naoqi.h; sourceTree = "<group>"; };
+		F1B1E4A622CC4D45009ED6D9 /* typeClassDefs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = typeClassDefs; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +270,7 @@
 				F189B30114A423A30051D2F0 /* WBFunctor.h */,
 				F189B30214A423A30051D2F0 /* WBMsg.h */,
 				F14043F2172E600C00EB63ED /* guwhiteboardtypelist_c_typestrings_generated.c */,
+				F1B1E4A622CC4D45009ED6D9 /* typeClassDefs */,
 				F189B30714A423A30051D2F0 /* gusimplewhiteboard.xcodeproj */,
 				F189B30814A423A30051D2F0 /* SimpleWhiteboardTest */,
 			);
@@ -561,6 +563,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = F189B2E314A4231B0051D2F0;
