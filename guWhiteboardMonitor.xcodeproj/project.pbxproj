@@ -234,11 +234,11 @@
 		F189B2E314A4231B0051D2F0 = {
 			isa = PBXGroup;
 			children = (
+				F189B2F414A4231B0051D2F0 /* guWhiteboardMonitor.1 */,
 				F189B2FB14A423950051D2F0 /* monitor.cpp */,
 				F189B2FC14A423950051D2F0 /* monitor.h */,
 				F189B2FE14A423A30051D2F0 /* gusimplewhiteboard */,
 				F189B31B14A423BF0051D2F0 /* Common */,
-				F189B2F114A4231B0051D2F0 /* guWhiteboardMonitor */,
 				F189B2EF14A4231B0051D2F0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -249,14 +249,6 @@
 				F189B2EE14A4231B0051D2F0 /* guWhiteboardMonitor */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		F189B2F114A4231B0051D2F0 /* guWhiteboardMonitor */ = {
-			isa = PBXGroup;
-			children = (
-				F189B2F414A4231B0051D2F0 /* guWhiteboardMonitor.1 */,
-			);
-			path = guWhiteboardMonitor;
 			sourceTree = "<group>";
 		};
 		F189B2FE14A423A30051D2F0 /* gusimplewhiteboard */ = {
