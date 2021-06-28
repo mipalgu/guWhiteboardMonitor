@@ -8,7 +8,7 @@
 #include "guwhiteboardgetter.h"
 
 using namespace std;
-using namespace guWhiteboard;
+using namespace CPP_WHITEBOARD_NAMESPACE;
 
 #ifdef CUSTOM_WB_NAME
 const char *default_name = CUSTOM_WB_NAME;
@@ -136,7 +136,7 @@ GUMonitor::~GUMonitor()
 }
 
 
-void GUMonitor::callback(guWhiteboard::WBTypes t, gu_simple_message *msg)
+void GUMonitor::callback(CPP_WHITEBOARD_NAMESPACE::WBTypes t, gu_simple_message *msg)
 {
 	const long long currentTime = get_utime();
 	const long long deltaMicros = currentTime - timeStamp;

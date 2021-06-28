@@ -20,7 +20,7 @@ public:
 	~GUMonitor();
 	
 private:
-        void callback(guWhiteboard::WBTypes t, gu_simple_message *msg);
+        void callback(CPP_WHITEBOARD_NAMESPACE::WBTypes t, gu_simple_message *msg);
         whiteboard_watcher *watcher;    /** new whiteboard object */
 	gu_simple_whiteboard_descriptor *wbd;
 #ifdef USE_OLD_WHITEBOARD
