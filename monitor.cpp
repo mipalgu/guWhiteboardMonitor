@@ -4,11 +4,14 @@
 #include <cstring>
 
 #include "gu_util.h"
+#include "guwhiteboardtypelist_c_generated.h"
 #include "monitor.h"
 #include "guwhiteboardgetter.h"
 
 using namespace std;
 using namespace CPP_WHITEBOARD_NAMESPACE;
+
+#define WBTYPES_NS CPP_WHITEBOARD_NAMESPACE::C_WBTYPES
 
 #ifdef CUSTOM_WB_NAME
 const char *default_name = CUSTOM_WB_NAME;
@@ -115,7 +118,7 @@ GUMonitor::GUMonitor(const char *name, int rwb, char **subscription_list, int n,
                 while (n--)
                 {
                         const char *type_name = *subscription_list++;
-                        WBTypes type = types_map[type_name];
+                        WBTYPES_NS type = types_map[type_name];
                         if (!type)
                         {
                                 cerr << "Cannot subscribe to unknown type " << type_name << endl;
@@ -136,7 +139,7 @@ GUMonitor::~GUMonitor()
 }
 
 
-void GUMonitor::callback(CPP_WHITEBOARD_NAMESPACE::WBTypes t, gu_simple_message *msg)
+void GUMonitor::callback(WBTYPES_NS t, gu_simple_message *msg)
 {
 	const long long currentTime = get_utime();
 	const long long deltaMicros = currentTime - timeStamp;
