@@ -6,6 +6,7 @@
 BIN=guWhiteboardMonitor
 
 ALL_TARGETS=host atom doc
+DEPENDS=gusimplewhiteboard
 
 CPP_SRCS=monitor.cpp
 HDRS=monitor.h 
