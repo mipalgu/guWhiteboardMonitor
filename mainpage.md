@@ -1,4 +1,4 @@
-guWhiteboardMonitor
+guWhiteboardMonitor {#mainpage}
 =====================
 
 `guWhiteboardMonitor` is a command line utility that allows live monitoring
