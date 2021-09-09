@@ -10,7 +10,7 @@ DEPENDS=gusimplewhiteboard
 
 CPP_SRCS=monitor.cpp
 HDRS=monitor.h 
-DOC_HDRS=mainpage.md
+DOC_HDRS=README.md
 CI_SERVER_DOC_SUBDIR=utils
 
 NEW_WHITEBOARD_SRCS+=guwhiteboardgetter.cpp guwhiteboardposter.cpp
